@@ -161,6 +161,7 @@
 	prefs.sanitize_preferences()
 	fit_viewport()
 
+	set_chat_mode()
 /*
 	//WIDESCREEN STUFF
 	var/splitter_value = text2num(winget( src, "mainwindow.mainvsplit", "splitter" ))
@@ -403,6 +404,14 @@ client/verb/character_setup()
 /client
 	var/last_view_x_dim = 7
 	var/last_view_y_dim = 7
+
+/client/verb/set_chat_mode()
+	set name = "Chat Color Mode"
+	set category = "OOC"
+	set hidden = 1
+
+	force_dark_theme()
+
 
 /client/verb/OnResize()
 	set hidden = 1

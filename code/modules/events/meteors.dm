@@ -12,7 +12,7 @@
 /datum/event/meteor_wave/setup()
 	waves = 0
 	for(var/n in 1 to severity)
-		waves += rand(5,15)
+		waves += rand(20,35)
 
 	start_side = pick(GLOB.cardinal)
 	endWhen = worst_case_end()
@@ -52,7 +52,7 @@
 		if(EVENT_LEVEL_MAJOR)
 			command_announcement.Announce("The [station_name()] has cleared the meteor storm.", "[station_name()] Sensor Array")
 		else
-			command_announcement.Announce("The [station_name()] has cleared the meteor shower", "[station_name()] Sensor Array")
+			command_announcement.Announce("The [station_name()] has cleared the meteor shower.", "[station_name()] Sensor Array")
 
 /datum/event/meteor_wave/proc/get_meteors()
 	switch(severity)
@@ -64,18 +64,18 @@
 			return meteors_minor
 
 /var/list/meteors_minor = list(
-	/obj/effect/meteor/medium     = 80,
+	/obj/effect/meteor/medium     = 120,
 	/obj/effect/meteor/dust       = 30,
 	/obj/effect/meteor/irradiated = 30,
-	/obj/effect/meteor/big        = 30,
+	/obj/effect/meteor/big        = 80,
 	/obj/effect/meteor/flaming    = 10,
 	/obj/effect/meteor/golden     = 10,
 	/obj/effect/meteor/silver     = 10,
 )
 
 /var/list/meteors_moderate = list(
-	/obj/effect/meteor/medium     = 80,
-	/obj/effect/meteor/big        = 30,
+	/obj/effect/meteor/medium     = 120,
+	/obj/effect/meteor/big        = 80,
 	/obj/effect/meteor/dust       = 30,
 	/obj/effect/meteor/irradiated = 30,
 	/obj/effect/meteor/flaming    = 10,
@@ -85,8 +85,8 @@
 )
 
 /var/list/meteors_major = list(
-	/obj/effect/meteor/medium     = 80,
-	/obj/effect/meteor/big        = 30,
+	/obj/effect/meteor/medium     = 120,
+	/obj/effect/meteor/big        = 80,
 	/obj/effect/meteor/dust       = 30,
 	/obj/effect/meteor/irradiated = 30,
 	/obj/effect/meteor/emp        = 30,
