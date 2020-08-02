@@ -228,7 +228,7 @@
 	// Do nothing for now.
 
 /datum/storage_ui/default/after_close(var/mob/user)
-	user.s_active -= src
+	user.s_active = null
 
 /datum/storage_ui/default/on_insertion(var/mob/user)
 	if(storage in user.s_active)
