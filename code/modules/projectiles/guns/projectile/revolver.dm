@@ -75,28 +75,6 @@
 		to_chat(M, "You name the gun [input]. Say hello to your new friend.")
 		return 1
 
-// Blade Runner pistol.
-/obj/item/weapon/gun/projectile/revolver/deckard
-	name = "Deckard .44"
-	desc = "A custom-built revolver, based off the semi-popular Detective Special model."
-	icon_state = "deckard-empty"
-	ammo_type = /obj/item/ammo_magazine/c38/rubber
-
-/obj/item/weapon/gun/projectile/revolver/deckard/emp
-	ammo_type = /obj/item/ammo_casing/c38/emp
-
-/obj/item/weapon/gun/projectile/revolver/deckard/update_icon()
-	..()
-	if(loaded.len)
-		icon_state = "deckard-loaded"
-	else
-		icon_state = "deckard-empty"
-
-/obj/item/weapon/gun/projectile/revolver/deckard/load_ammo(var/obj/item/A, mob/user)
-	if(istype(A, /obj/item/ammo_magazine))
-		flick("deckard-reload",src)
-	..()
-
 /obj/item/weapon/gun/projectile/revolver/capgun
 	name = "cap gun"
 	desc = "Looks almost like the real thing! Ages 8 and up."
@@ -175,4 +153,14 @@
 	max_shells = 6
 	caliber = "a9mm"
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	ammo_type = /obj/item/ammo_casing/a9mm
+
+/obj/item/weapon/gun/projectile/revolver/colony/deckard
+	name = "BC-24 revolver"
+	desc = "A very iconic revolver used to be modern in the 24th century but it's pretty old now. Chambered in (9mm)."
+	icon_state = "deckard-loaded"
+	item_state = "pistol1"
+	max_shells = 6
+	caliber = "a9mm"
+	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 2)
 	ammo_type = /obj/item/ammo_casing/a9mm
