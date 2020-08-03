@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/energy/laser
 	name = "laser carbine"
-	desc = "A Hephaestus Industries G40E carbine, designed to kill with concentrated energy blasts."
+	desc = "The Tarvos T-6B carbine, designed to kill with concentrated energy blasts."
 	icon_state = "laser"
 	item_state = "laser"
 	slot_flags = SLOT_BELT|SLOT_BACK
@@ -20,7 +20,7 @@
 
 /obj/item/weapon/gun/energy/laser/practice
 	name = "practice laser carbine"
-	desc = "A modified version of the HI G40E, this one fires less concentrated energy bolts designed for target practice."
+	desc = "A modified version of the T-6B, this one fires less concentrated energy bolts designed for target practice."
 	icon_state = "laserp"
 	projectile_type = /obj/item/projectile/beam/practice
 	charge_cost = 10 //How much energy is needed to fire.
