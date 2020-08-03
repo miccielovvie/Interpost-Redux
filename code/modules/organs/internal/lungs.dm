@@ -122,7 +122,10 @@
 		var/lung_rupture_prob =  robotic >= ORGAN_ROBOT ? prob(2.5) : prob(5) //Robotic lungs are less likely to rupture.
 		if(env_pressure < species.hazard_low_pressure || env_pressure > species.hazard_high_pressure)
 			if(!is_bruised() && lung_rupture_prob) //only rupture if NOT already ruptured
-				rupture()
+				var/obj/item/organ/external/parent = owner.get_organ(parent_organ)
+				if(istype(parent))
+					owner.custom_pain("You feel a stabbing pain in your [parent.name]!", 5, affecting = parent)
+					take_damage(5)
 	if(breath.total_moles == 0)
 		breath_fail_ratio = 1
 		handle_failed_breath()
