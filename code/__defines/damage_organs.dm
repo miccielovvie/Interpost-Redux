@@ -31,7 +31,7 @@
 #define DAM_LASER (1<<2)
 
 #define FIRE_DAMAGE_MODIFIER 0.0215 // Higher values result in more external fire damage to the skin. (default 0.0215)
-#define  AIR_DAMAGE_MODIFIER 2.025  // More means less damage from hot air scalding lungs, less = more damage. (default 2.025)
+#define  AIR_DAMAGE_MODIFIER 1.805  // More means less damage from hot air scalding lungs, less = more damage. (default 2.025)
 
 // Organ defines.
 #define ORGAN_CUT_AWAY   (1<<0)
