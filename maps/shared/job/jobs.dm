@@ -3,8 +3,8 @@
 						/datum/job/captain,
 						/datum/job/countess,
 						/datum/job/hop,
-						//datum/job/supreme_arbiter,
-						//datum/job/arbiter,
+						/datum/job/supreme_arbiter,
+						/datum/job/arbiter,
 						///datum/job/medassist
 						/datum/job/hos,
 						/datum/job/officer,
