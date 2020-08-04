@@ -345,6 +345,8 @@
 #include "code\datums\repositories\crew\tracking.dm"
 #include "code\datums\repositories\crew\vital.dm"
 #include "code\datums\repositories\crew\~defines.dm"
+#include "code\datums\spawnpoints\cryo_advices.dm"
+#include "code\datums\spawnpoints\cryo_effects.dm"
 #include "code\datums\supplypacks\atmospherics.dm"
 #include "code\datums\supplypacks\engineering.dm"
 #include "code\datums\supplypacks\hydroponics.dm"

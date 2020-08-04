@@ -628,6 +628,7 @@
 		//H.generate_stats(STAT_DX)
 		H.add_stats(rand(2,18), rand(2,18), rand(2,18), rand(2,18))
 		H.generate_skills(list("melee"))
+		H.setBrainLoss(rand(50, 200))
 
 
 //CHURCH JOBS

@@ -27,6 +27,10 @@ GLOBAL_VAR(spawntypes)
 
 	return 1
 
+//Called after mob is created, moved to a turf and equipped.
+/datum/spawnpoint/proc/after_join(mob/victim)
+	return
+
 #ifdef UNIT_TEST
 /datum/spawnpoint/Del()
 	crash_with("Spawn deleted: [log_info_line(src)]")
@@ -55,12 +59,48 @@ GLOBAL_VAR(spawntypes)
 
 /datum/spawnpoint/cryo
 	display_name = "Cryogenic Storage"
-	msg = "has completed cryogenic revival"
-	disallow_job = list("Cyborg")
+	msg = "has completed cryogenic awakening"
+	disallow_job = list("Robot")
 
 /datum/spawnpoint/cryo/New()
 	..()
 	turfs = GLOB.latejoin_cryo
+
+/datum/spawnpoint/cryo/after_join(mob/living/carbon/human/victim)
+	if(!istype(victim))
+		return
+	var/area/A = get_area(victim)
+	var/list/spots = list()
+
+	for(var/obj/machinery/cryopod/C in A)
+		if(!C.occupant)
+			spots += C
+	if(!length(spots))
+		to_chat(victim, "You woke up a bit earlier than everyone.")
+		turfs -= get_turf(victim)
+		return
+
+	for(var/obj/machinery/cryopod/C in shuffle(spots))
+		if(!C.occupant)
+			C.set_occupant(victim, 1)
+			to_chat(victim, "<span class='notice'You're awakening from cryosleep...</span>")
+			victim.sleeping = 0
+			victim.Sleeping(rand(2,7))
+			victim.bodytemperature = victim.species.cold_level_1 //very cold, but a point before damage
+
+			if(!victim.isSynthetic()) //fluff. I didn't used else at next lines because of code readness
+				to_chat(victim, "<span class='notice'>You're feeling cold and realize that there are water drops on your face. Cryogenic Liquid just \
+				stopped refrigerating the air in the chamber...You see a bright light, blinding you. \
+				Yet another shift has begun.</span>")
+			else
+				to_chat(victim, "<span class='notice'>Awakening signal received. Battery is charged. All systems nominal. Ready to work, my lord.</span>")
+
+			if(!victim.isSynthetic())
+				give_effect(victim)
+				give_advice(victim)
+
+				victim.drowsyness += 30
+			break
 
 /datum/spawnpoint/cyborg
 	display_name = "Cyborg Storage"
