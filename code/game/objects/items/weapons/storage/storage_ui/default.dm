@@ -352,7 +352,7 @@
 	user.client.screen += csu.close_button
 
 	is_seeing |= user
-	user.s_active |= storage
+	user.s_active = storage
 
 /datum/storage_ui/default/hide_from(var/mob/user)
 	is_seeing -= user
@@ -423,18 +423,3 @@
 
 					O.screen_loc = "[num2screen(sx)],[num2screen(sy)]"
 					O.hud_layerise()
-
-/*
-// Sets up numbered display to show the stack size of each stored mineral
-// NOTE: numbered display is turned off currently because it's broken
-/datum/storage_ui/default/sheetsnatcher/prepare_ui(var/mob/user)
-	var/adjusted_contents = storage.contents.len
-
-	var/row_num = 0
-	var/col_count = min(7,storage.storage_slots) -1
-	if (adjusted_contents > 7)
-		row_num = round((adjusted_contents-1) / 7) // 7 is the maximum allowed width.
-	arrange_item_slots(row_num, col_count)
-	if(user && user.s_active)
-		user.s_active.show_to(user)
-*/
