@@ -128,7 +128,7 @@
 	var/input_index = get_pin_data(IC_INPUT, 1)
 	var/output = null
 
-	if(isnum(input_index) && (input_index >= 1 && input_index < inputs.len))
+	if(isnum_safe(input_index) && (input_index >= 1 && input_index < inputs.len))
 		output = get_pin_data(IC_INPUT, input_index + 1)
 	set_pin_data(IC_OUTPUT, 1, output)
 
@@ -291,7 +291,7 @@
 		to_chat(user, "A small screen displays 'Last configured by: [last_configurator ? last_configurator : "N/A"]'.")
 /obj/item/integrated_circuit/logic/unary/access_verifier/do_check(var/datum/integrated_io/access_input)
 	var/list/access = access_input.get_data()
-	if(isnum(access))
+	if(isnum_safe(access))
 		access = list(access)
 	else if(istype(access, /datum/encrypted_ic_data))
 		var/datum/encrypted_ic_data/eicd = access

@@ -9,7 +9,7 @@
 	item_flags = ITEM_FLAG_NO_BLUDGEON
 
 /obj/item/stack/bullets/New(var/amount = 1)
-	if(isnum(amount))
+	if(isnum_safe(amount))
 		amount = amount
 	update_icon()
 
@@ -29,7 +29,7 @@
 			to_chat(user, "<span class='notice'>You remove [take_amount] from the [new_stack.name]</span>")
 		else
 			new_stack.dropInto(user.loc)
-		
+
 		update_icon()
 
 

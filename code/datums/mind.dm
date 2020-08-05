@@ -161,7 +161,7 @@
 	usr << browse(out, "window=edit_memory[src]")
 
 /datum/mind/proc/get_goal_from_href(var/href)
-	var/ind = isnum(href) ? href : text2num(href)
+	var/ind = isnum_safe(href) ? href : text2num(href)
 	if(ind > 0 && ind <= LAZYLEN(goals))
 		return goals[ind]
 

@@ -589,7 +589,7 @@ datum/projectile_data
 /proc/getviewsize(view)
 	var/viewX
 	var/viewY
-	if(isnum(view))
+	if(isnum_safe(view))
 		var/totalviewrange = 1 + 2 * view
 		viewX = totalviewrange
 		viewY = totalviewrange

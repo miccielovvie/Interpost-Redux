@@ -392,7 +392,7 @@ var/world_topic_spam_protect_time = world.timeofday
 			return "Bad Key"
 
 		var/age = get_player_age(input["age"])
-		if(isnum(age))
+		if(isnum_safe(age))
 			if(age >= 0)
 				return "[age]"
 			else
