@@ -34,12 +34,12 @@
 /obj/screen/new_player/selection/join_game
 	name = "Join Game"
 	icon_state = "unready"
-	screen_loc = "LEFT+2,CENTER-5"
+	screen_loc = "LEFT+2.1,CENTER-5"
 
 /obj/screen/new_player/selection/settings
 	name = "Setup"
 	icon_state = "setup"
-	screen_loc = "LEFT+6.7,CENTER-5"
+	screen_loc = "LEFT+6.8,CENTER-5"
 
 /obj/screen/new_player/selection/observe
 	name = "Observe"
