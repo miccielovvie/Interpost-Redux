@@ -3,7 +3,7 @@
 	set category = "Debug"
 	set name = "Edit Ticker Variables"
 
-		feedback_add_details("admin_verb","ETV") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	feedback_add_details("admin_verb","ETV") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/mod_list_add_ass()
 	var/class = "text"
