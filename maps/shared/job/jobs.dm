@@ -1,7 +1,7 @@
 /datum/map/frontier
 	allowed_jobs = list(
 						/datum/job/captain,
-						/datum/job/countess,
+						//datum/job/countess,
 						/datum/job/hop,
 						/datum/job/supreme_arbiter,
 						/datum/job/arbiter,
@@ -9,21 +9,21 @@
 						/datum/job/hos,
 						/datum/job/officer,
 						//datum/job/detective,
+						/datum/job/cmo,
 						/datum/job/doctor,
-						/datum/job/undertaker,
 						/datum/job/rd,
 						/datum/job/scientist,
 						/datum/job/qm,
 						/datum/job/cargo_tech,
-						/datum/job/cargo_tech/machinist,
+						//datum/job/cargo_tech/machinist,
 						/datum/job/mining,
 						/datum/job/chef,
-						/datum/job/bartender,
-						/datum/job/hydro,
+						//datum/job/bartender,
+						//datum/job/hydro,
 						/datum/job/janitor,
 						/datum/job/engineer,
 						/datum/job/chaplain,
-						/datum/job/jester
+						//datum/job/jester
 						///datum/job/assistant,
 						///datum/job/cadet
 						///datum/job/ouvrier
@@ -45,7 +45,7 @@
 						/datum/job/officer,
 						/datum/job/detective,
 						/datum/job/doctor,
-						/datum/job/undertaker,
+						/datum/job/cmo,
 						///datum/job/rd,
 						///datum/job/scientist,
 						/datum/job/qm,
@@ -80,7 +80,7 @@
 						/datum/job/officer,
 						/datum/job/detective,
 						/datum/job/doctor,
-						/datum/job/undertaker,
+						/datum/job/cmo,
 						/datum/job/rd,
 						/datum/job/scientist,
 						/datum/job/qm,
@@ -114,7 +114,7 @@
 						/datum/job/officer,
 						///datum/job/detective,
 						/datum/job/doctor,
-						/datum/job/undertaker,
+						/datum/job/cmo,
 						/datum/job/rd,
 						/datum/job/scientist,
 						/datum/job/qm,
@@ -149,7 +149,7 @@
 						/datum/job/officer,
 						/datum/job/detective,
 						/datum/job/doctor,
-						/datum/job/undertaker,
+						/datum/job/cmo,
 						/datum/job/rd,
 						/datum/job/scientist,
 						/datum/job/qm,
@@ -191,8 +191,8 @@
 		H.generate_skills(list("crafting","melee","cleaning","mining"))
 
 /datum/job/captain
-	title = "Count"
-	supervisors = "your own wits, boredom, the King"
+	title = "Captain"
+	supervisors = "your own wits and TetraCorp"
 	minimal_player_age = 41
 	economic_modifier = 10
 	ideal_character_age = 65
@@ -231,8 +231,8 @@
 
 
 /datum/job/hop
-	title = "Viscount"
-	supervisors = "the Count"
+	title = "Junior Manager"
+	supervisors = "the Captain"
 	minimal_player_age = 31
 	economic_modifier = 5
 	ideal_character_age = 45
@@ -253,8 +253,8 @@
 
 /datum/job/rd
 	selection_color = "#0055A1"
-	title = "Court Magus"
-	supervisors = "the Count"
+	title = "Scientific Overseer"
+	supervisors = "the Captain"
 	minimal_player_age = 21
 	economic_modifier = 9
 	ideal_character_age = 40
@@ -288,8 +288,8 @@
 
 /datum/job/scientist
 	selection_color = "#006BCA"
-	title = "Technology Researcher"
-	supervisors = "the Court Magus"
+	title = "Technologist"
+	supervisors = "the Scientific Overseer"
 	minimal_player_age = 19
 	economic_modifier = 2
 	ideal_character_age = 30
@@ -310,13 +310,13 @@
 
 /datum/job/doctor
 	selection_color = "#633d63"
-	title = "Lifebringer"
+	title = "Physician"
 	department_flag = MED
-	supervisors = "the Undertaker"
+	supervisors = "the Medical Officer and Hippocrates"
 	minimal_player_age = 19
 	economic_modifier = 2
 	ideal_character_age = 30
-	total_positions = 3
+	total_positions = 2
 	spawn_positions = 3
 	access = list(access_medical, access_medical_equip, access_genetics, access_tox,
 			access_chemistry, access_virology, access_surgery)
@@ -328,8 +328,9 @@
 	H.generate_stats(STAT_IQ)
 	H.generate_skills(list("medical","cleaning", "surgery"))
 
-/datum/job/undertaker
-	title = "Undertaker"
+/datum/job/cmo
+	title = "Medical Officer"
+	supervisors = "the Captain"
 	selection_color = "#382238"
 	department = "Medical"
 	department_flag = MED
@@ -337,18 +338,18 @@
 
 	total_positions = 1
 	spawn_positions = 1
-	outfit_type = /decl/hierarchy/outfit/job/medical/undertaker
+	outfit_type = /decl/hierarchy/outfit/job/medical/cmo
 	access = list(access_medical, access_medical_equip, access_morgue, access_genetics, access_heads, access_tox, access_chemistry, access_virology, access_cmo, access_surgery, access_maint_tunnels)
 	minimal_access = list(access_medical, access_medical_equip, access_morgue, access_genetics, access_heads, access_tox, access_chemistry, access_virology, access_cmo, access_surgery, access_maint_tunnels)
 
-/datum/job/undertaker/equip(var/mob/living/carbon/human/H)
+/datum/job/cmo/equip(var/mob/living/carbon/human/H)
 	..()
 	H.generate_stats(STAT_IQ)
 	H.generate_skills(list("medical","cleaning", "surgery"))
 
 /datum/job/hos
-	title = "Enforcer Chief"
-	supervisors = "the Count"
+	title = "Marshal"
+	supervisors = "the Captain"
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
@@ -371,17 +372,16 @@
 		..()
 		if(!H.religion_is_legal())//So that they can't be heretics.
 			H.religion = LEGAL_RELIGION
-		//H.add_stats(rand(12,18), rand(10,16), rand(8,12))
-		H.generate_stats(STAT_ST)
+		H.add_stats(rand(14,18), rand(8,10), rand(8,10), rand(6,8))
+		//H.generate_stats(STAT_ST)
 		H.generate_skills(list("melee","ranged"))
 
-
 /datum/job/officer
-	title = "Loyaler Enforcer"
+	title = "Enforcer"
 	department = "Security"
 	department_flag = SEC
-	total_positions = 3
-	spawn_positions = 4
+	total_positions = 2
+	spawn_positions = 8
 	economic_modifier = 3
 	sex_lock = MALE
 	access = list(access_security, access_eva, access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks)
@@ -393,10 +393,8 @@
 		..()
 		if(!H.religion_is_legal())//So that they can't be heretics.
 			H.religion = LEGAL_RELIGION
-		//H.add_stats(rand(11,16), rand(10,14), rand(7,10))
-		H.generate_stats(STAT_ST)
+		H.add_stats(rand(13,16), rand(8,10), rand(8,10), rand(6,8))
 		H.generate_skills(list("melee","ranged"))
-
 
 /datum/job/detective
 	title = "Detective"
@@ -419,11 +417,10 @@
 		H.generate_stats(STAT_ST)
 		H.generate_skills(list("melee","ranged"))
 
-
 /datum/job/qm
 	selection_color = "#3d3315"
-	title = "Cargo Overseer"
-	supervisors = "the Viscount"
+	title = "Logistics Officer"
+	supervisors = "the Overseer"
 	minimal_player_age = 21
 	economic_modifier = 3
 	ideal_character_age = 30
@@ -441,7 +438,7 @@
 
 /datum/job/engineer
 	title = "Station Maintainer"
-	supervisors = "the Viscount"
+	supervisors = "the Overseer"
 	minimal_player_age = 16
 	economic_modifier = 3
 	ideal_character_age = 21
@@ -462,8 +459,8 @@
 
 /datum/job/mining
 	selection_color = "#7c6a2e"
-	title = "Excavation Officer"
-	supervisors = "the Cargo Overseer and the Court Magus"
+	title = "Asteroid Miner"
+	supervisors = "the Logistics Officer"
 	minimal_player_age = 16
 	economic_modifier = 2
 	ideal_character_age = 21
@@ -482,12 +479,12 @@
 
 /datum/job/cargo_tech
 	selection_color = "#7c6a2e"
-	title = "Cargo Worker"
-	supervisors = "the Cargo Overseer"
+	title = "Logistics Worker"
+	supervisors = "the Logistics Officer"
 	minimal_player_age = 16
 	economic_modifier = 2
 	ideal_character_age = 21
-	total_positions = 2
+	total_positions = 1
 	spawn_positions = 2
 	access = list(access_maint_tunnels, access_mailsorting, access_manufacturing, access_cargo, access_cargo_bot, access_mining, access_mining_station)
 	minimal_access = list(access_maint_tunnels, access_mailsorting, access_manufacturing, access_cargo, access_cargo_bot, access_mining, access_mining_station)
@@ -530,10 +527,9 @@
 		H.add_stats(rand(3,6), rand(12,16), rand(6,9))
 		..()
 
-
 /datum/job/chef
-	title = "Chef"
-	supervisors = "the Viscount"
+	title = "Nutritionist"
+	supervisors = "the Overseer"
 	minimal_player_age = 16
 	economic_modifier = 2
 	ideal_character_age = 21
@@ -629,7 +625,6 @@
 		H.add_stats(rand(2,18), rand(2,18), rand(2,18), rand(2,18))
 		H.generate_skills(list("melee"))
 		H.setBrainLoss(rand(50, 200))
-
 
 //CHURCH JOBS
 //The inquisitor, aka the supreme arbiter.
