@@ -200,6 +200,7 @@
 	social_class = SOCIAL_CLASS_MAX
 	department_flag = SPT
 	sex_lock = MALE
+	rankprefix  = "Captain"
 
 
 	equip(var/mob/living/carbon/human/H)

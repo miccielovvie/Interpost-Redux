@@ -7,7 +7,7 @@ html, body {
 	padding: 0;
 	margin: 0;
 	height: 100%;
-	color: #a4bad6;
+	color: #CCCCE2;
 }
 body {
 	background-image: url("chatbg.png");
@@ -15,7 +15,7 @@ body {
 	background-attachment: fixed;
 	font-family: Roboto Condensed, sans-serif;
 	font-size: 13px;
-	font-color: #a4bad6;
+	font-color: #CCCCE2;
 	line-height: 1.2;
 	overflow-x: hidden;
 	overflow-y: scroll;
@@ -252,7 +252,9 @@ a.popt {text-decoration: none;}
 .motd a, .motd a:link, .motd a:visited, .motd a:active, .motd a:hover {color: #a4bad6;}
 
 /* ADD HERE FOR BOLD */
-.bold, .name, .prefix, .ooc, .looc, .adminooc, .admin, .medal, .yell {font-weight: bold;}
+.bold, .prefix, .ooc, .looc, .adminooc, .admin, .medal, .yell {font-weight: bold;}
+
+.name {font-weight: bold; font-size: 110%; text-shadow: 0 0 3px #6C6EA0}
 
 /* ADD HERE FOR ITALIC */
 .italic, .italics, .emote {font-style: italic;}
@@ -328,7 +330,7 @@ h1.alert, h2.alert		{color: #a4bad6;}
 .warning				{color: #c51e1e; text-shadow: 0 0 2px red}
 .boldannounce			{color: #c51e1e;	font-weight: bold; text-shadow: 0 0 1px red}
 .rose					{color: #ff5050;}
-.info					{color: #6685f5;}
+.info					{color: #9696E4;}
 .notice					{color: #6685f5;}
 .alium					{color: #00ff00;}
 .cult					{color: #aa1c1c;}

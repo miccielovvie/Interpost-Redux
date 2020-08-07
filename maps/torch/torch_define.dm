@@ -2,9 +2,8 @@
 	name = "Torch"
 	full_name = "SEV Torch"
 	path = "torch"
-	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 
-	lobby_icon = 'maps/torch/icons/lobby.dmi'
+	lobby_icon = 'maps/frontier/frontier_lobby.dmi'
 
 	station_levels = list(1,2,3,4,5)
 	contact_levels = list(1,2,3,4,5)
@@ -45,7 +44,6 @@
 	away_site_budget = 3
 
 	id_hud_icons = 'maps/torch/icons/assignment_hud.dmi'
-	lobby_screens = list("title","title2")
 
 /datum/map/torch/setup_map()
 	..()

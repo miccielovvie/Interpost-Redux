@@ -21,6 +21,7 @@
 	icon_state = "newcaptain"
 	item_state = "newcaptain"
 	worn_state = "newcaptain"
+	insrank = "Captain"
 
 
 /obj/item/clothing/under/rank/cargo

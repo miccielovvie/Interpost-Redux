@@ -422,6 +422,56 @@
 		total_damage += ..(shock_damage, E.organ_tag, base_siemens_coeff * get_siemens_coefficient_organ(E))
 	return total_damage
 
+var/list/rank_prefix = list(\
+	"Captain" = "Captain",\
+	"Efreitor" = "Efr.",\
+	"Mladshiy Sergant" = "M.Sgt.",\
+	"Sergant" = "Sgt.",\
+	"Starshiy Sergant" = "S.Sgt.",\
+	"Starshina" = "Starsh.",\
+	"Praporshik" = "Prap.",\
+	"Starshiy Praporshik" = "St.Prap.",\
+	"Leitenant" = "Lt.",\
+	"Starshiy Leitenant" = "St.Lt.",\
+	"Kapitan" = "Kap.",\
+	"Mladshiy Leitenant" = "Ml.Lt.",\
+	"Private" = "PVT",\
+	"Private First Class" = "PFC",\
+	"Lance Corporal" = "LCPL",\
+	"Corporal" = "CPL",\
+	"Sergeant" = "SGT",\
+	"Staff Sergeant" = "SSGT",\
+	"Master Sergeant" = "MSGT",\
+	"Gunnery Sergeant" = "GySGT",\
+	"First Sergeant" = "FSGT",\
+	"Second Lieutenant" = "SLT",\
+	"Soldat" = "Soldat",\
+	"Gefreiter" = "Gefreiter",\
+	"Stabsgefreiter" = "Stabsgefreiter",\
+	"Stabsunteroffizier" = "Stabsunteroffizier",\
+	"Unteroffizier" = "Unteroffizier",\
+	"Leutnant" = "Leutnant",\
+	"Vojin" = "Vojin",\
+	"Svobodnik" = "Svobodnik",\
+	"Cetar" = "Cetar",\
+	"Rotmistr" = "Rotmistr",\
+	"Rotny" = "Rotny",\
+	"Porucik" = "Porucik",\
+	)
+
+/mob/living/carbon/human/proc/rank_prefix_name(name)
+	if(get_ins_rank())
+		if(findtext(name, " "))
+			name = copytext(name, findtext(name, " "))
+		name = get_ins_rank() + name
+	return name
+
+/mob/living/carbon/human/proc/get_ins_rank()
+	var/rank
+	if(rank_prefix[rank])
+		return rank_prefix[rank]
+	return ""
+
 /mob/living/carbon/human/proc/trace_shock(var/obj/item/organ/external/init, var/obj/item/organ/external/floor)
 	var/obj/item/organ/external/list/traced_organs = list(floor)
 
@@ -1624,20 +1674,19 @@
 		if(SOCIAL_CLASS_MIN)
 			return "<b>filth</b>"
 		if(SOCIAL_CLASS_MED)
-			return "<b>a commoner</b>"
+			return "<b>a worker</b>"
 		if(SOCIAL_CLASS_HIGH)
-			return "<b>a lesser noble</b>"
+			return "<b>an officer</b>"
 		if(SOCIAL_CLASS_MAX)
-			return "<b>a noble</b>"
-
+			return "<b>the authority</b>"
 
 /mob/living/carbon/human/proc/get_social_description(var/mob/living/carbon/human/H)
 	var/socclass = social_class
 	if(ishuman(H))
 		if(socclass < H.social_class)
-			return "They are of a <b>lesser</b> social class than me, thus making me superior."
+			return "They are of a <b>lesser</b> social class than me."
 		else if(socclass > H.social_class)
-			return "They are of a <b>higher</b> social class than me, I must respect and obey them!"
+			return "They are of a <b>higher</b> social class than me."
 		else
 			return "They are of the same social class as me."
 
