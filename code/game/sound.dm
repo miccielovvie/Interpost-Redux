@@ -403,7 +403,7 @@ var/const/FALLOFF_SOUNDS = 0.5
 
 	var/turf/T = get_turf(src)
 	// 3D sounds, the technology is here!
-	if(isturf(turf_source))
+	if(T && isturf(turf_source))
 		//sound volume falloff with distance
 		var/distance = get_dist(T, turf_source)
 
