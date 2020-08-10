@@ -60,9 +60,7 @@
 
 	msg += "<br>"
 
-	for(var/mob/living/carbon/human/player in SSmobs.mob_list)
-		if(player.mind)
-			msg += "I always knew [T.him] as the <b>[player.mind.assigned_role]</b>.\n"
+	msg += "I always knew [T.him] as the <b>[H.job]</b>.\n"
 
 	if((!skipface || wear_id) && src != user)
 		var/mob/living/carbon/human/H = user
