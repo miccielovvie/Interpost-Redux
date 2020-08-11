@@ -76,7 +76,7 @@
 		visible_message("<b>[src] surrenders!</b>")
 		playsound(src, 'sound/effects/surrender.ogg', 50, 1)
 		var/atom/movable/overlay/animation = new /atom/movable/overlay(loc)
-		animation.icon_state = "blank"
+		animation.icon_state = "surrender"
 		animation.icon = 'icons/mob/screen1.dmi'
 		animation.master = src
 		flick("attention", animation)
