@@ -2712,8 +2712,6 @@
 #include "maps\away\yacht\yacht.dm"
 #include "maps\away_sites_testing\away_sites_testing_define.dm"
 #include "maps\bearcat\bearcat_define.dm"
-#include "maps\bunki\bunki-1.dmm"
-#include "maps\bunki\bunki-2.dmm"
 #include "maps\dreyfus\dreyfus_define.dm"
 #include "maps\example\example_define.dm"
 #include "maps\frontier\frontier.dm"
