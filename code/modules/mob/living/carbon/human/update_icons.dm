@@ -143,7 +143,8 @@ Please contact me on #coderbus IRC. ~Carn x
 #define R_HAND_LAYER			25
 #define FIRE_LAYER				26		//If you're on fire
 #define TARGETED_LAYER			27		//BS12: Layer for the target overlay from weapon targeting system
-#define TOTAL_LAYERS			27
+#define BANDAGES_LAYER			28
+#define TOTAL_LAYERS			28
 //////////////////////////////////
 
 /mob/living/carbon/human
@@ -465,6 +466,7 @@ var/global/list/damage_icon_parts = list()
 	update_inv_pockets(0)
 	update_fire(0)
 	update_surgery(0)
+	update_bandaging(0)
 	UpdateDamageIcon()
 	update_icons()
 	//Hud Stuff
@@ -770,6 +772,20 @@ var/global/list/damage_icon_parts = list()
 	overlays_standing[SURGERY_LEVEL] = total
 	if(update_icons)   update_icons()
 
+/mob/living/carbon/human/proc/update_bandaging(var/update_icons=1)
+	var/image/DD = image(icon='icons/mob/human_races/masks/bandages_human.dmi', icon_state="")
+	for (var/obj/item/organ/external/O in organs)
+		if (O.is_stump())
+			continue
+		if (O.wounds.len == 0)
+			continue
+		for (var/datum/wound/W in O.wounds)
+			if (W.bandaged || W.clamped || W.salved)
+				DD.overlays += image(icon='icons/mob/human_races/masks/bandages_human.dmi', icon_state="[O.organ_tag]b")
+				continue
+	overlays_standing[BANDAGES_LAYER] = DD
+	if (update_icons)   update_icons()
+
 //Human Overlays Indexes/////////
 #undef MUTATIONS_LAYER
 #undef DAMAGE_LAYER
@@ -795,4 +811,5 @@ var/global/list/damage_icon_parts = list()
 #undef R_HAND_LAYER
 #undef TARGETED_LAYER
 #undef FIRE_LAYER
+#undef BANDAGES_LAYER
 #undef TOTAL_LAYERS
