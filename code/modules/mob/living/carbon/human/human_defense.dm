@@ -173,6 +173,9 @@ meteor_act
 	if(user == src) // Attacking yourself can't miss
 		return target_zone
 
+	if(attempt_dodge())//Trying to dodge it before they even have the chance to miss us.
+		return null
+
 	var/hit_modifier = user.c_intent == I_AIM ? -40 : 0 //If they are in aim mode, miss less
 	var/hit_zone = get_zone_with_miss_chance(target_zone, src, hit_modifier)
 

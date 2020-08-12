@@ -48,7 +48,7 @@
 	var/dodge_modifier = c_intent == I_DEFEND ? 4 : 0 //If they are in defend mode, they dodge more
 	if (defense_intent != I_DODGE || lying)  // If they are not trying to dodge or are lying down
 		return 0
-	if(combat_mode)//Todo, make use of the check_shield_arc proc to make sure you can't dodge from behind.
+	if(combat_mode || prob(50))//Todo, make use of the check_shield_arc proc to make sure you can't dodge from behind.
 		if(staminaloss < 50 && statcheck(stats[STAT_DX], 10 - dodge_modifier, "We couldn't dodge in time!", "dex"))//You gotta be the master of dexterity to dodge every time.
 			do_dodge()
 			return	1

@@ -120,6 +120,9 @@
 			visible_message("<span class='danger'>[M] attempted to grab \the [src]!</span>")
 			return H.make_grab(H, src)
 
+			if(attempt_dodge())//Trying to dodge it before they even have the chance to miss us.
+				return
+
 		if(I_HURT)
 			M.adjustStaminaLoss(rand(2,5))//No more spamming disarm without consequences.
 			if(!istype(H))
@@ -150,7 +153,10 @@
 				H.last_attack = world.time + cooldown_modifier
 
 			if(!affecting || affecting.is_stump())
-				to_chat(M, "<span class='danger'>They are missing that limb!</span>")
+				to_chat(M, "<span class='danger'>You cannot attack something the enemy doesn't have.</span>")
+				return 1
+
+			if(attempt_dodge())//Trying to dodge it before they even have the chance to miss us.
 				return 1
 
 			switch(src.combat_mode)
@@ -256,6 +262,9 @@
 			if(H.species)
 				admin_attack_log(M, src, "Disarmed their victim.", "Was disarmed.", "disarmed")
 				H.species.disarm_attackhand(H, src)
+
+			if(attempt_dodge())//Trying to dodge it before they even have the chance to miss us.
+				return
 
 	return
 
