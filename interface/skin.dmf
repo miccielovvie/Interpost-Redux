@@ -514,6 +514,9 @@ macro "macro"
 		name = "F"
 		command = ".fixeye"
 	elem 
+		name = "V"
+		command = ".mob_rest"
+	elem 
 		name = "SHIFT+X"
 		command = ".wield"
 	elem 

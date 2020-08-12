@@ -254,7 +254,7 @@ a.popt {text-decoration: none;}
 /* ADD HERE FOR BOLD */
 .bold, .prefix, .ooc, .looc, .adminooc, .admin, .medal, .yell {font-weight: bold;}
 
-.name {font-weight: bold; font-size: 110%; text-shadow: 0 0 3px #6C6EA0}
+.name {font-weight: bold; font-size: 105%}
 
 /* ADD HERE FOR ITALIC */
 .italic, .italics, .emote {font-style: italic;}

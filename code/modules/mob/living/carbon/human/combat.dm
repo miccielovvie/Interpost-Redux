@@ -98,3 +98,9 @@
 		rest?.icon_state = "rest1"
 		fixeye?.icon_state = "fixeye"
 		walk_to(src,0)
+
+/mob/verb/mob_rest_hotkey()
+	set name = ".mob_rest"
+	set hidden = 1
+
+	mob_rest()
