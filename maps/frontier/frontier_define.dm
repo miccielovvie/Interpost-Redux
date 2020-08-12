@@ -14,28 +14,28 @@
 
 	allowed_spawns = list("Arrivals Shuttle")
 
-	station_name  = "County of Algol, Frontier Outpost"
+	station_name  = "NO DATA"
 	station_short = "Frontier"
-	dock_name     = "NTTM1-54 Relay"
-	boss_name     = "Kingdom Relay System"
-	boss_short    = "Kingdom"
-	company_name  = "Kingdom Relay System"
-	company_short = "KRS"
+	dock_name     = "TCTM1-54 GR-32 ST"
+	boss_name     = "TetraCorp Announcement Relay"
+	boss_short    = "TetraCorp"
+	company_name  = "TetraCorp Announcement Relay"
+	company_short = "TRC"
 	system_name = "Algol System"
 
 	id_hud_icons = 'maps/dreyfus/icons/assignment_hud.dmi'
 
 
-	map_admin_faxes = list("King's Authority")
+	map_admin_faxes = list("TetraCorp Central Committee")
 
 	shuttle_docked_message = "The shuttle has docked."
 	shuttle_leaving_dock = "The shuttle has departed from home dock."
 	shuttle_called_message = "A scheduled transfer shuttle has been sent."
-	shuttle_recall_message = "The shuttle has been recalled"
-	emergency_shuttle_docked_message = "The emergency escape shuttle has docked."
-	emergency_shuttle_leaving_dock = "The emergency escape shuttle has departed from %dock_name%."
-	emergency_shuttle_called_message = "An emergency escape shuttle has been sent."
-	emergency_shuttle_recall_message = "The emergency shuttle has been recalled"
+	shuttle_recall_message = "The shuttle has been recalled."
+	emergency_shuttle_docked_message = "The emergency escape shuttle 'Aqen' has docked."
+	emergency_shuttle_leaving_dock = "The emergency escape shuttle 'Aqen' has departed from %dock_name%."
+	emergency_shuttle_called_message = "The emergency escape shuttle 'Aqen' has been sent."
+	emergency_shuttle_recall_message = "The emergency shuttle 'Aqen' has been recalled."
 
 	evac_controller_type = /datum/evacuation_controller/shuttle
 

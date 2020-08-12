@@ -262,13 +262,13 @@
 	icon_state = "wooden_chair_wings_preview"
 
 /obj/structure/bed/chair/wood/wood
-	name = "wooden chair"
+	name = "chair"
 	desc = "A comfy wooden chair to sit in."
 	base_icon = "wood_chair1"
 	icon_state = "wood_chair1"
 
 /obj/structure/bed/chair/wood/wood1
-	name = "wooden chair"
+	name = "chair"
 	desc = "A comfy wooden chair to sit in."
 	base_icon = "wood_chair2"
 	icon_state = "wood_chair2"
