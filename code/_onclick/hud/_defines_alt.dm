@@ -254,3 +254,11 @@
 
 #define ui_tg_iarrowleft "SOUTH-1,11"
 #define ui_tg_iarrowright "SOUTH-1,13"
+
+
+//Vrhuman
+#define ui_vrhuman_shop "WEST+2:-2,SOUTH+4:20"
+#define ui_vrhuman_exit "WEST+1:-2,SOUTH+4:20"
+#define ui_vrhuman_main "WEST:-2,SOUTH+4:20"
+#define ui_vrhuman_cleanup "WEST+3:-2,SOUTH+4:20"
+#define ui_vrhuman_dienow "WEST+4:-2,SOUTH+4:20"

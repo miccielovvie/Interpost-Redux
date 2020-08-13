@@ -66,6 +66,11 @@
 	//used for optional self-objectives that antagonists can give themselves, which are displayed at the end of the round.
 	var/ambitions
 
+	var/thunder_points = 0
+	var/thunder_respawns = 0
+	var/mob/living/carbon/human/thunderfield_owner
+	var/thunderfield_cheater = FALSE
+
 	var/prayer
 	var/religion
 	var/list/initial_email_login = list("login" = "", "password" = "")
