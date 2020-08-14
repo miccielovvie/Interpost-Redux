@@ -194,6 +194,14 @@
 		list(mode_name="automatic",   burst=5, fire_delay=null, move_delay=null,    one_hand_penalty=3, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2), automatic = 1),
 		)
 
+/obj/item/weapon/gun/projectile/automatic/colonyak/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "colonyrifle"
+	else
+		icon_state = "colonyrifle-empty"
+	return
+
 /obj/item/weapon/gun/projectile/automatic/tbr16
 	name = "TBR-16"
 	desc = "The compact TBR-16 is an open bolt, gas operated, battle SMG, reliable, and expensive."
