@@ -70,21 +70,11 @@ GLOBAL_VAR(spawntypes)
 	if(!istype(victim))
 		return
 	var/area/A = get_area(victim)
-	var/list/spots = list()
-
 	for(var/obj/machinery/cryopod/C in A)
 		if(!C.occupant)
-			spots += C
-	if(!length(spots))
-		to_chat(victim, "You woke up a bit earlier than everyone.")
-		turfs -= get_turf(victim)
-		return
-
-	for(var/obj/machinery/cryopod/C in shuffle(spots))
-		if(!C.occupant)
 			C.set_occupant(victim, 1)
-			to_chat(victim, "<span class='notice'You're awakening from cryosleep...</span>")
-
+			victim.Sleeping(rand(1,6))
+			return
 /datum/spawnpoint/cyborg
 	display_name = "Cyborg Storage"
 	msg = "has been activated from storage"

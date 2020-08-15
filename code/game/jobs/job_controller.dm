@@ -568,7 +568,7 @@ var/global/datum/controller/occupations/job_master
 											to_chat(H, "<B>.......<B>")
 											spawn(100)
 												if(job.supervisors)
-													to_chat(H, "<b>I gotta remember to pay attention to [job.supervisors], if I want to keep my job...</b>")
+													to_chat(H, "<b>I gotta remember to pay attention to <font color ='#FFD700'>[job.supervisors]</font>, if I want to keep my job...</b>")
 												spawn(20)
 													to_chat(H, "<B>.......<B>")
 													spawn(20)

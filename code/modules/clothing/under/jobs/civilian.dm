@@ -23,6 +23,14 @@
 	worn_state = "newcaptain"
 	insrank = "Captain"
 
+/obj/item/clothing/under/rank/tetra //gonna replace everyone's uniforms with this, makes sense to be standardized.
+	desc =  "It's a grey jumpsuit with a deep purple vest. It has the Tetracorp logo stamped onto it. The standard uniform for all workers."
+	name = "Tetracorp uniform"
+	icon_state = "cargotetro"
+	item_state = "cargotetro"
+	worn_state = "cargotetro"
+
+
 
 /obj/item/clothing/under/rank/cargo
 	name = "quartermaster's jumpsuit"
