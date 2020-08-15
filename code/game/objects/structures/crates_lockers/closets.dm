@@ -120,7 +120,7 @@
 	src.dump_contents()
 
 	src.opened = 1
-	playsound(src.loc, open_sound, 15, 1, -3)
+	playsound(src, 'sound/effects/locker_open.ogg', 40, 1, -3)
 	density = 0
 	update_icon()
 	return 1
@@ -134,7 +134,7 @@
 	store_contents()
 	src.opened = 0
 
-	playsound(src.loc, close_sound, 25, 0, -3)
+	playsound(src, 'sound/effects/locker_close.ogg', 40, 0, -3)
 	density = 1
 
 	update_icon()
