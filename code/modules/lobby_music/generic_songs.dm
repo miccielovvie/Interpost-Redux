@@ -3,3 +3,9 @@
 
 /lobby_music/lobby1
 	song = 'sound/music/lobby1.ogg'
+
+/lobby_music/museum
+	song = 'sound/music/museum.ogg'
+
+/lobby_music/failed
+	song = 'sound/music/failed.ogg'
