@@ -25,12 +25,6 @@
 
 #undef NONSENSICAL_VALUE
 
-/atom/movable/New()
-	. = ..()
-	var/turf/simulated/T = loc
-	if(istype(T))
-		T.opaque_counter += opacity
-
 /atom/proc/update_light()
 	set waitfor = FALSE
 
@@ -60,7 +54,7 @@
 	if(.)
 		var/turf/T = loc
 		if(istype(T))
-			T.handle_opacity_change(src)
+			T.RecalculateOpacity()
 
 #define LIGHT_MOVE_UPDATE \
 var/turf/old_loc = loc;\
