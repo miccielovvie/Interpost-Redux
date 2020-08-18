@@ -81,6 +81,7 @@
 
 /datum/mind/Destroy()
 	SSticker.minds -= src
+	current = null
 	. = ..()
 
 /datum/mind/proc/transfer_to(mob/living/new_character)
