@@ -654,12 +654,6 @@ macro "macro"
 	elem 
 		name = "."
 		command = "move-down"
-	elem 
-		name = "SHIFT"
-		command = "setmovingquickly"
-	elem 
-		name = "SHIFT+UP"
-		command = "setmovingslowly"
 
 macro "borgmacro"
 	elem 

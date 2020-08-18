@@ -3,6 +3,7 @@
 /obj/effect/lobby_image
 	name = "Interpost Hague" // god bless us
 	desc = "This shouldn't be read."
+	mouse_opacity = 0
 	screen_loc = "WEST,SOUTH"
 
 /obj/effect/lobby_image/Initialize()
