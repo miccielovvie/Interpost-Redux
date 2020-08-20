@@ -2730,6 +2730,8 @@
 #include "maps\shared\datums\uniforms.dm"
 #include "maps\shared\items\cards_ids.dm"
 #include "maps\shared\items\clothing.dm"
+#include "maps\socrus\socrus-1.dmm"
+#include "maps\socrus\socrus-2.dmm"
 #include "maps\torch\torch_define.dm"
 #include "maps\utopia\utopia_define.dm"
 #include "maps\~mapsystem\map_preferences.dm"
