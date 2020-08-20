@@ -131,6 +131,20 @@
 /obj/item/ammo_magazine/glock17/empty
 	initial_ammo = 0
 
+/obj/item/ammo_magazine/betta
+	name = "betta magazine (9mm)"
+	icon_state = "a9mmm"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	matter = list(DEFAULT_WALL_MATERIAL = 600)
+	caliber = "a9mm"
+	ammo_type = /obj/item/ammo_casing/a9mm
+	max_ammo = 15
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/betta/empty
+	initial_ammo = 0
+
 /obj/item/ammo_magazine/maers14
 	name = "Maers-14 magazine (9mm)"
 	icon_state = "shellguard"
