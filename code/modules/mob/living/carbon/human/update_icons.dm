@@ -831,4 +831,5 @@ var/global/list/damage_icon_parts = list()
 #undef TARGETED_LAYER
 #undef FIRE_LAYER
 #undef BANDAGES_LAYER
+#undef BLEEDING_LAYER
 #undef TOTAL_LAYERS
