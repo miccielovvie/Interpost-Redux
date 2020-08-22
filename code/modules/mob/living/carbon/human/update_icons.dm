@@ -144,7 +144,8 @@ Please contact me on #coderbus IRC. ~Carn x
 #define FIRE_LAYER				26		//If you're on fire
 #define TARGETED_LAYER			27		//BS12: Layer for the target overlay from weapon targeting system
 #define BANDAGES_LAYER			28
-#define TOTAL_LAYERS			28
+#define BLEEDING_LAYER			29
+#define TOTAL_LAYERS			29
 //////////////////////////////////
 
 /mob/living/carbon/human
@@ -467,6 +468,7 @@ var/global/list/damage_icon_parts = list()
 	update_fire(0)
 	update_surgery(0)
 	update_bandaging(0)
+	update_bleeding(0)
 	UpdateDamageIcon()
 	update_icons()
 	//Hud Stuff
@@ -785,6 +787,23 @@ var/global/list/damage_icon_parts = list()
 				continue
 	overlays_standing[BANDAGES_LAYER] = DD
 	if (update_icons)   update_icons()
+
+/mob/living/carbon/human/proc/update_bleeding(var/update_icons=1)
+	overlays_standing[BLEEDING_LAYER] = null
+	var/image/total = new
+	for(var/obj/item/organ/external/E in organs)
+		if (E.wounds.len == 0)
+			continue
+		if(E.status & ORGAN_BLEEDING) // check if bleeding, i dont know if there is another way to do it maybe without the loop
+			var/image/I = image(icon='icons/mob/human_races/human_bleeding.dmi', icon_state="[E.organ_tag]_s1")
+			total.overlays += I
+		else if(E.status & (!(ORGAN_BLEEDING)))
+			var/image/IM = image(icon='icons/mob/human_races/human_bleeding.dmi', icon_state="[E.organ_tag]_s0")
+			total.overlays += IM
+	total.appearance_flags = RESET_COLOR | PIXEL_SCALE
+	overlays_standing[BLEEDING_LAYER] = total
+	if(update_icons)   update_icons()
+
 
 //Human Overlays Indexes/////////
 #undef MUTATIONS_LAYER

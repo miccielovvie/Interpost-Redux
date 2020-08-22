@@ -41,6 +41,7 @@
 			instance = brute_dam - instance
 			instonce = burn_dam - instonce
 			var/force_droplimb = 0
+			var/force_droplimbburn = 0
 			if(instance >= statht)
 				force_droplimb = 1
 			if(instonce >= statht)
@@ -129,6 +130,7 @@
 
 	if(owner && update_damstate())
 		owner.UpdateDamageIcon()
+		owner.update_bleeding()
 
 	return created_wound
 
