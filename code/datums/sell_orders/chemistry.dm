@@ -99,7 +99,7 @@
 
 /datum/sell_order/chemistry/alkysine
 	name = "Alkysine"
-	description = "Mass idiocy has grasped us. We need [name]."
+	description = "Mass idiocy has grasped us. We need alkysine."
 
 /datum/sell_order/chemistry/alkysine/v240
 	wanted = list(/datum/reagent/alkysine = 240)
