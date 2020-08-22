@@ -55,7 +55,7 @@
 	I.color = c
 	return I
 
-/obj/screen/storage/gridbox/MouseEntered()
+/obj/screen/storage/gridbox/MouseEntered(location,control,params)
 	..()
 	var/obj/item/weapon/storage/storage = master
 	if(istype(storage))
