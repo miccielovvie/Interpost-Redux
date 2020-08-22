@@ -8,7 +8,7 @@ SUBSYSTEM_DEF(ao)
 	var/list/cache = list()
 
 /datum/controller/subsystem/ao/stat_entry()
-	..("P:[queue.len]")
+	return ..("P:[queue.len]")
 
 /datum/controller/subsystem/ao/fire(resumed = 0, no_mc_tick = FALSE)
 	var/list/curr = queue

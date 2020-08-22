@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(lighting)
 	for (var/stype in stats_lists)
 		out += "[stype] updates: [jointext(stats_lists[stype], " | ")]"
 
-	..(out.Join("\n"))
+	return ..(out.Join("\n"))
 
 /datum/controller/subsystem/lighting/Initialize()
 	InitializeTurfs()

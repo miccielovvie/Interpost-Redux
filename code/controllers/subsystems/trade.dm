@@ -30,7 +30,7 @@ SUBSYSTEM_DEF(trade)
 		generate_trader()
 
 /datum/controller/subsystem/trade/stat_entry()
-	..("Traders: [traders.len]")
+	return ..("Traders: [traders.len]")
 
 /datum/controller/subsystem/trade/proc/generate_trader(var/stations = 0)
 	var/list/possible = list()

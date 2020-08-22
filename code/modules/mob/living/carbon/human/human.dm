@@ -65,45 +65,44 @@
 		qdel(organ)
 	return ..()
 
-/mob/living/carbon/human/Stat()
+/mob/living/carbon/human/get_status_tab_items()
 	. = ..()
-	if(statpanel("Status"))
-		stat(uppertext(STAT_ST), "[round(stats[STAT_ST])]")
-		stat(uppertext(STAT_DX), "[round(stats[STAT_DX])]")
-		stat(uppertext(STAT_IQ), "[round(stats[STAT_IQ])]")
-		stat(uppertext(STAT_HT), "[round(stats[STAT_HT])]")
+	. += "[round(stats[STAT_ST])]"
+	. += "[round(stats[STAT_DX])]"
+	. += "[round(stats[STAT_IQ])]"
+	. += "[round(stats[STAT_HT])]"
 
-		if(SSevac.evacuation_controller)
-			var/eta_status = SSevac.evacuation_controller.get_status_panel_eta()
-			if(eta_status)
-				stat(null, eta_status)
+	if(SSevac.evacuation_controller)
+		var/eta_status = SSevac.evacuation_controller.get_status_panel_eta()
+		if(eta_status)
+			. += "ETA: [eta_status]"
 
-		if (istype(internal))
-			if (!internal.air_contents)
-				qdel(internal)
-			else
-				stat("Internal Atmosphere Info", internal.name)
-				stat("Tank Pressure", internal.air_contents.return_pressure())
-				stat("Distribution Pressure", internal.distribute_pressure)
+	if (istype(internal))
+		if (!internal.air_contents)
+			qdel(internal)
+		else
+			. += "Internal Atmosphere Info: [internal.name]"
+			. += "Tank Pressure: [internal.air_contents.return_pressure()]"
+			. += "Distribution Pressure: [internal.distribute_pressure]"
 
-		var/obj/item/organ/internal/xenos/plasmavessel/P = internal_organs_by_name[BP_PLASMA]
-		if(P)
-			stat(null, "Phoron Stored: [P.stored_plasma]/[P.max_plasma]")
+	var/obj/item/organ/internal/xenos/plasmavessel/P = internal_organs_by_name[BP_PLASMA]
+	if(P)
+		. += "Phoron Stored: [P.stored_plasma]/[P.max_plasma]"
 
-		var/obj/item/organ/internal/cell/potato = internal_organs_by_name[BP_CELL]
-		if(potato && potato.cell)
-			stat("Battery charge:", "[potato.get_charge()]/[potato.cell.maxcharge]")
+	var/obj/item/organ/internal/cell/potato = internal_organs_by_name[BP_CELL]
+	if(potato && potato.cell)
+		. += "Battery charge: [potato.get_charge()]/[potato.cell.maxcharge]"
 
-		if(back && istype(back,/obj/item/weapon/rig))
-			var/obj/item/weapon/rig/suit = back
-			var/cell_status = "ERROR"
-			if(suit.cell) cell_status = "[suit.cell.charge]/[suit.cell.maxcharge]"
-			stat(null, "Suit charge: [cell_status]")
+	if(back && istype(back,/obj/item/weapon/rig))
+		var/obj/item/weapon/rig/suit = back
+		var/cell_status = "ERROR"
+		if(suit.cell) cell_status = "[suit.cell.charge]/[suit.cell.maxcharge]"
+		. += "Suit charge: [cell_status]"
 
-		if(mind)
-			if(mind.changeling)
-				stat("Chemical Storage", mind.changeling.chem_charges)
-				stat("Genetic Damage Time", mind.changeling.geneticdamage)
+	if(mind)
+		if(mind.changeling)
+			. += "Chemical Storage: [mind.changeling.chem_charges]"
+			. += "Genetic Damage Time: [mind.changeling.geneticdamage]"
 
 
 /mob/living/carbon/human/ex_act(severity)

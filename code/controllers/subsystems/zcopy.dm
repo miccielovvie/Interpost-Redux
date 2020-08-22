@@ -84,7 +84,7 @@ SUBSYSTEM_DEF(zcopy)
 	enable()
 
 /datum/controller/subsystem/zcopy/stat_entry()
-	..("Q:{T:[queued_turfs.len - (qt_idex - 1)]|O:[queued_overlays.len - (qo_idex - 1)]} T:{T:[openspace_turfs]|O:[openspace_overlays]}")
+	return ..("Q:{T:[queued_turfs.len - (qt_idex - 1)]|O:[queued_overlays.len - (qo_idex - 1)]} T:{T:[openspace_turfs]|O:[openspace_overlays]}")
 
 /datum/controller/subsystem/zcopy/Initialize(timeofday)
 	calculate_zstack_limits()

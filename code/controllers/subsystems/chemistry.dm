@@ -10,7 +10,7 @@ SUBSYSTEM_DEF(chemistry)
 	var/list/processing_holders =           list()
 
 /datum/controller/subsystem/chemistry/stat_entry()
-	..("AH:[active_holders.len]")
+	return ..("AH:[active_holders.len]")
 
 /datum/controller/subsystem/chemistry/Initialize()
 

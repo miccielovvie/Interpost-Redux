@@ -96,17 +96,16 @@
 				if(prob(host.getBrainLoss()/20))
 					host.say("*[pick(list("blink","blink_r","choke","aflap","drool","twitch","twitch_v","gasp"))]")
 
-/mob/living/simple_animal/borer/Stat()
+/mob/living/simple_animal/borer/get_status_tab_items()
 	. = ..()
-	statpanel("Status")
 
 	if(SSevac.evacuation_controller)
 		var/eta_status = SSevac.evacuation_controller.get_status_panel_eta()
 		if(eta_status)
-			stat(null, eta_status)
+			. += "[eta_status]"
 
-	if (client.statpanel == "Status")
-		stat("Chemicals", chemicals)
+	if (client)
+		. += "Chemicals: [chemicals]"
 
 /mob/living/simple_animal/borer/proc/detatch()
 

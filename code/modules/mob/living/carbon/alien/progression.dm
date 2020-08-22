@@ -1,7 +1,7 @@
-/mob/living/carbon/alien/Stat()
+/mob/living/carbon/alien/get_status_tab_items()
 	. = ..()
-	if(. && statpanel("Status"))
-		stat("Growth", "[round(amount_grown)]/[max_grown]")
+	if(.)
+		. += "Growth: [round(amount_grown)]/[max_grown]"
 
 /mob/living/carbon/alien/verb/evolve()
 

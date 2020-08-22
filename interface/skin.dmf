@@ -1188,4 +1188,14 @@ window "infowindow"
 		highlight-color = #70a0ff
 		on-show = ".winset\"rpane.infob.is-visible=true;rpane.infob.pos=65,0 rpane.textb.is-visible=true rpane.infob.is-checked=true rpane.rpanewindow.pos=0,30 rpane.rpanewindow.size=0x0 rpane.rpanewindow.left=infowindow\""
 		on-hide = ".winset\"rpane.infob.is-visible=false;rpane.textb.is-visible=true rpane.rpanewindow.pos=0,30 rpane.rpanewindow.size=0x0 rpane.rpanewindow.left=\""
+		on-tab = ".output statbrowser:tab_change [[*]]"
+	elem "statbrowser"
+		type = BROWSER
+		pos = 6,24
+		size = 628x450
+		anchor1 = 0,0
+		anchor2 = 100,100
+		background-color = none
+		saved-params = ""
+		is-visible = false
 

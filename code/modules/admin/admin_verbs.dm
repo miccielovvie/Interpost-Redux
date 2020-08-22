@@ -205,6 +205,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/cmd_analyse_health_panel,
 	/client/proc/visualpower,
 	/client/proc/enable_profiler,
+	/client/proc/toggle_legacy_mc_tab,
 	/client/proc/visualpower_remove
 	)
 
@@ -959,3 +960,13 @@ var/list/admin_verbs_mentor = list(
 
 	message_admins("[key_name_admin(usr)] removed all the dead bodies ([count] total).")
 	return
+
+/client/proc/toggle_legacy_mc_tab()
+	set name = "Toggle Legacy MC Tab"
+	set category = "Debug"
+	set desc = "For if the normal one breaks"
+
+	if(!holder)
+		return
+
+	holder.legacy_mc = !holder.legacy_mc

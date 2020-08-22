@@ -67,7 +67,7 @@ SUBSYSTEM_DEF(event)
 			return
 
 /datum/controller/subsystem/event/stat_entry()
-	..("E:[active_events.len]")
+	return ..("E:[active_events.len]")
 
 //Actual event handling
 /datum/controller/subsystem/event/proc/event_complete(var/datum/event/E)

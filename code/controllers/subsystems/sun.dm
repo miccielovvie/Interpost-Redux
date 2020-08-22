@@ -8,4 +8,4 @@ SUBSYSTEM_DEF(sun)
 	GLOB.sun.calc_position()
 
 /datum/controller/subsystem/sun/stat_entry()
-	..("Angle:[GLOB.sun.angle]")
+	return ..("Angle:[GLOB.sun.angle]")

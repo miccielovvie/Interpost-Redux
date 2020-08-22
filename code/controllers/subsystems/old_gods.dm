@@ -11,7 +11,7 @@ SUBSYSTEM_DEF(old_gods)
 	for(var/G in GLOB.all_religions)
 		var/datum/religion/selected_religion = GLOB.all_religions[G]
 		if(selected_religion.name != LEGAL_RELIGION)
-			if(prob(5)) 
+			if(prob(5))
 				if(selected_religion.request == null)
 					selected_religion.request(G)
 				else
@@ -26,7 +26,7 @@ SUBSYSTEM_DEF(old_gods)
 	..()
 
 /datum/controller/subsystem/old_gods/stat_entry(msg)
-	..("old god is here")
+	return ..("old god is here")
 
 /datum/controller/subsystem/old_gods/Recover()
 	log_debug("Old Gods are recovering!")

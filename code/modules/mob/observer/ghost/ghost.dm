@@ -187,13 +187,12 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/observer/ghost/can_use_hands()	return 0
 /mob/observer/ghost/is_active()		return 0
 
-/mob/observer/ghost/Stat()
+/mob/observer/ghost/get_status_tab_items()
 	. = ..()
-	if(statpanel("Status"))
-		if(SSevac.evacuation_controller)
-			var/eta_status = SSevac.evacuation_controller.get_status_panel_eta()
-			if(eta_status)
-				stat(null, eta_status)
+	if(SSevac.evacuation_controller)
+		var/eta_status = SSevac.evacuation_controller.get_status_panel_eta()
+		if(eta_status)
+			. += "[eta_status]"
 
 /mob/observer/ghost/verb/reenter_corpse()
 	set category = "Ghost"

@@ -73,3 +73,5 @@
 	var/hi_last_pos
 
 	var/encoding = "1252"
+
+	var/list/spell_tabs = list()

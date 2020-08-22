@@ -554,22 +554,19 @@
 	for(var/mob/M in viewers())
 		M.see(message)
 
+/mob/proc/get_status_tab_items()
+	. = list()
+
 /mob/Stat()
 	..()
 	. = (is_client_active(10 MINUTES))
 	if(!.)
 		return
 
-	if(statpanel("Status"))
-		if(GAME_STATE >= RUNLEVEL_LOBBY)
-			//stat("Local Time", stationtime2text())
-			//stat("Local Date", stationdate2text())
-			stat("Round Duration", roundduration2text())
-		if(client.holder || isghost(client.mob))
-			stat("Location:", "([x], [y], [z]) [loc]")
-
-	if(client.holder)
-		if(statpanel("MC"))
+	statpanel("Status")
+	if(client && client.holder)
+		statpanel("MC")
+		if(client.holder.legacy_mc && statpanel("MC (legacy)"))
 			stat("CPU:","[world.cpu]")
 			stat("Instances:","[world.contents.len]")
 			stat(null)
@@ -592,16 +589,15 @@
 		if(!TurfAdjacent(listed_turf))
 			listed_turf = null
 		else
-			if(statpanel("Turf"))
-				stat(listed_turf)
-				for(var/atom/A in listed_turf)
-					if(!A.mouse_opacity)
-						continue
-					if(A.invisibility > see_invisible)
-						continue
-					if(is_type_in_list(A, shouldnt_see))
-						continue
-					stat(A)
+			statpanel(listed_turf.name, null, listed_turf)
+			for(var/atom/A in listed_turf)
+				if(!A.mouse_opacity)
+					continue
+				if(A.invisibility > see_invisible)
+					continue
+				if(is_type_in_list(A, shouldnt_see))
+					continue
+				statpanel(listed_turf.name, null, A)
 
 
 // facing verbs
@@ -1120,3 +1116,6 @@ proc/uh(var/S)
 	S = lower.Replace(S, "h")	 //replaces all lowercase letters with "h"
 	S = replacetext(S," h"," u") //makes it so we words start with "u" most of the time.
 	return S
+
+/mob/proc/get_proc_holders()
+	. = list()

@@ -158,6 +158,7 @@
 
 	. = ..()	//calls mob.Login()
 	chatOutput.start()
+	src << browse(file('html/statbrowser.html'), "window=statbrowser")
 	prefs.sanitize_preferences()
 	fit_viewport()
 
@@ -341,19 +342,6 @@
 /client/proc/inactivity2text()
 	var/seconds = inactivity/10
 	return "[round(seconds / 60)] minute\s, [seconds % 60] second\s"
-
-// Byond seemingly calls stat, each tick.
-// Calling things each tick can get expensive real quick.
-// So we slow this down a little.
-// See: http://www.byond.com/docs/ref/info.html#/client/proc/Stat
-/client/Stat()
-	if(!usr)
-		return
-	// Add always-visible stat panel calls here, to define a consistent display order.
-	statpanel("Status")
-
-	. = ..()
-	sleep(1)
 
 //send resources to the client. It's here in its own proc so we can move it around easiliy if need be
 /client/proc/send_resources()

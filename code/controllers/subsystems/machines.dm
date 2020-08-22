@@ -133,7 +133,7 @@ datum/controller/subsystem/machines/proc/setup_atmos_machinery(list/machines)
 	msg += "PN:[powernets.len]|"
 	msg += "PO:[power_objects.len]|"
 	msg += "MC/MS:[round((cost ? processing.len/cost : 0),0.1)]"
-	..(jointext(msg, null))
+	return ..(jointext(msg, null))
 
 /datum/controller/subsystem/machines/proc/process_pipenets(resumed = 0)
 	if (!resumed)

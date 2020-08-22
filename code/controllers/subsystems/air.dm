@@ -125,7 +125,7 @@ SUBSYSTEM_DEF(air)
 		"AH:[active_hotspots.len] ",
 		"AE:[active_edges.len]"
 	)
-	..(out.Join())
+	return ..(out.Join())
 
 /datum/controller/subsystem/air/Initialize(timeofday, simulate = TRUE)
 

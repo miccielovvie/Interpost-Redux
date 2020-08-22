@@ -4,6 +4,8 @@
 
 var/list/admin_datums = list()
 
+GLOBAL_VAR_INIT(href_token, GenerateToken())
+
 /datum/admins
 	var/rank         = "Temporary Admin"
 	var/client/owner = null
@@ -17,6 +19,10 @@ var/list/admin_datums = list()
 	var/datum/feed_channel/admincaster_feed_channel = new /datum/feed_channel
 	var/admincaster_signature	//What you'll sign the newsfeeds as
 
+	var/legacy_mc = FALSE
+
+	var/href_token
+
 /datum/admins/proc/marked_datum()
 	if(marked_datum_weak)
 		return marked_datum_weak.resolve()
@@ -29,6 +35,7 @@ var/list/admin_datums = list()
 	admincaster_signature = "[GLOB.using_map.company_name] Officer #[rand(0,9)][rand(0,9)][rand(0,9)]"
 	rank = initial_rank
 	rights = initial_rights
+	href_token = GenerateToken()
 	admin_datums[ckey] = src
 
 /datum/admins/proc/associate(client/C)
@@ -104,14 +111,14 @@ NOTE: It checks usr by default. Supply the "user" argument if you wish to check 
 		//qdel(holder)
 	return 1
 
-/mob/Stat()
+/mob/get_status_tab_items()
 	. = ..()
 	if(!client)
 		return
 
 	var/stealth_status = client.is_stealthed()
-	if(stealth_status && statpanel("Status"))
-		stat("Stealth", "Engaged [client.holder.stealthy_ == STEALTH_AUTO ? "(Auto)" : "(Manual)"]")
+	if(stealth_status)
+		. += "Stealth: Engaged [client.holder.stealthy_ == STEALTH_AUTO ? "(Auto)" : "(Manual)"]"
 
 /client/proc/is_stealthed()
 	if(!holder)
@@ -144,6 +151,11 @@ NOTE: It checks usr by default. Supply the "user" argument if you wish to check 
 		to_chat(src, "<span class='notice'>You are no longer stealthed.</span>")
 	log_and_message_admins("has turned stealth mode [holder.stealthy_ ? "ON" : "OFF"]")
 	SSstatistics.add_field_details("admin_verb","SM") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/proc/GenerateToken()
+	. = ""
+	for(var/I in 1 to 32)
+		. += "[rand(10)]"
 
 #undef STEALTH_OFF
 #undef STEALTH_MANUAL

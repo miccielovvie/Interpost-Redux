@@ -35,7 +35,7 @@ SUBSYSTEM_DEF(tgui)
 			return
 
 /datum/controller/subsystem/tgui/stat_entry()
-	..("UI:[tg_open_uis.len], P:[processing_uis.len]")
+	return ..("UI:[tg_open_uis.len], P:[processing_uis.len]")
 
 /datum/controller/subsystem/tgui/VV_hidden()
 	. = ..()
