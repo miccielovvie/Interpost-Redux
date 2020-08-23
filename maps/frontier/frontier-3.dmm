@@ -1264,7 +1264,7 @@
 "yp" = (/obj/effect/floor_decal/newcorner/whitegreen{tag = "icon-wgreen (WEST)"; icon_state = "wgreen"; dir = 8},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/dark,/area/medical/morgue)
 "yq" = (/obj/structure/table/standard,/obj/random/maintenance/clean,/obj/random/maintenance/clean,/obj/random/gloves,/turf/simulated/floor/plating,/area/maintenance/medbay)
 "yr" = (/obj/effect/floor_decal/newcorner/whitegreen/solid,/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"; pixel_y = 0},/obj/random/trash,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/dark,/area/medical/morgue)
-"ys" = (/obj/effect/floor_decal/newcorner/teal/solid,/obj/machinery/firealarm{pixel_y = -24},/obj/structure/closet/crate,/obj/item/frame/canvas,/obj/item/frame/canvas,/obj/item/frame/canvas,/turf/simulated/floor/tiled,/area/hallway/primary/central_two)
+"ys" = (/obj/effect/floor_decal/newcorner/teal/solid,/obj/machinery/firealarm{pixel_y = -24},/obj/structure/table/standard,/obj/item/frame/canvas/size_m,/obj/item/frame/canvas/size_m/portrait,/turf/simulated/floor/tiled,/area/hallway/primary/central_two)
 "yt" = (/obj/effect/floor_decal/newcorner/whitegreen/diagonal,/obj/machinery/light,/turf/simulated/floor/tiled/dark,/area/medical/morgue)
 "yu" = (/obj/machinery/vending/sovietsoda,/turf/simulated/floor/tiled/bunker/polar,/area/medical/genetics_cloning)
 "yv" = (/obj/structure/bed,/obj/item/weapon/bedsheet,/turf/simulated/floor/tiled/dark,/area/medical/genetics_cloning)
