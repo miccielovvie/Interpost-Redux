@@ -157,6 +157,7 @@ Please contact me on #coderbus IRC. ~Carn x
 //I'll work on removing that stuff by rewriting some of the cloaking stuff at a later date.
 /mob/living/carbon/human/update_icons()
 	lying_prev = lying	//so we don't update overlays for lying/standing unless our stance changes again
+	hanging_prev = hanging
 	update_hud()		//TODO: remove the need for this
 	overlays.Cut()
 
