@@ -1,5 +1,5 @@
 /mob/living/carbon/proc/print_happiness(var/mob/living/carbon/human/H)
-	var/msg = "\n<span class='info'>|----------|</span>\n"
+	var/msg = "\n<div class='firstdiv'><div class='box'>"
 	msg += "<span class='info'>I am a follower of </span><font color='red'>[religion]</font>.\n"
 	msg += "<span class='info'>I still remember my name, it's </span><font color='green'>[real_name].</font>\n"
 	msg += "<span class='info'>I believe I am </span><font color='red'>[H.age]</font> <span class='info'>years old.</span>\n"
@@ -14,7 +14,7 @@
 		msg += "<span class='info'>I feel indifferent.</span>\n"
 
 
-	msg += "<span class='info'>*---------*</span>"
+	msg += "</div></div>"
 	to_chat(src, msg)
 
 /mob/living/carbon/proc/update_happiness()

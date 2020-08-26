@@ -356,6 +356,28 @@ h1.alert, h2.alert		{color: #a4bad6;}
 .good                   {color: #4f7529; font-weight: bold;}
 .bad                    {color: #ee0000; font-weight: bold;}
 
+/* unrelated */
+.box {
+    display: inline-block;
+    min-width: 10px;
+    text-align: left;
+    border: 1px ridge #151319;
+    padding: 10px;
+    font-size: 15px;
+    vertical-align: middle;   
+    background: rgba(40, 40, 40, 0.5);
+    *zoom: 1;
+    *display: inline;
+}
+
+.firstdiv {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    *zoom: 1;
+    *display: inline;
+}
+
 @keyframes hypnocolor {
 	0%		{color: #202020;}
 	25%		{color: #4b02ac;}
