@@ -35,7 +35,7 @@
 	if(get_dist(user, src) > 3)
 		skipears = 1
 
-	var/list/msg = list("<div class='firstdiv'><div class='box'><span class='info'>\nOh, this is ")
+	var/list/msg = list("<div class='firstdiv'><div class='box'><span class='info'>Oh, this is ")
 
 	var/datum/gender/T = gender_datums[get_gender()]
 	if(skipjumpsuit && skipface) //big suits/masks/helmets make it hard to tell their gender
@@ -371,7 +371,7 @@
 
 	if(print_flavor_text()) msg += "[print_flavor_text()]\n"
 
-	msg += "\n</span></div></div><br>"
+	msg += "</span></div></div><br>"
 	msg += applying_pressure
 
 	if (pose)
