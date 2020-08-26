@@ -61,7 +61,7 @@ var opts = {
 	'clientDataLimit': 5,
 	'clientData': [],
 
-	'font': 'Arial',
+	'font': 'Roboto Condensed',
 	'messageCombining': true,
 
 };
