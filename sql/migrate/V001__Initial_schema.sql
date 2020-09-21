@@ -108,8 +108,7 @@ CREATE TABLE IF NOT EXISTS `erro_player` (
   `lastseen` datetime NOT NULL,
   `ip` varchar(18) NOT NULL,
   `computerid` varchar(32) NOT NULL,
-  `lastadminrank` varchar(32) NOT NULL DEFAULT 'Player',
-  `chromosome` int(11) NOT NULL DEFAULT '0'
+  `lastadminrank` varchar(32) NOT NULL DEFAULT 'Player'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
