@@ -58,8 +58,6 @@
 #define WAIT_ARRIVE  3
 #define WAIT_FINISH  4
 
-#define SUCCESS 1 //used for stolen grab code from is12
-
 // Diagonal movement for movable atoms
 #define FIRST_DIAG_STEP 	1
 #define SECOND_DIAG_STEP 	2
