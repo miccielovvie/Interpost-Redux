@@ -2593,6 +2593,7 @@
 #include "code\modules\VR\VR_field.dm"
 #include "code\modules\VR\vr_gamepad.dm"
 #include "code\modules\VR\VR_items.dm"
+#include "code\modules\VR\VR_misc.dm"
 #include "code\modules\VR\vr_uplink.dm"
 #include "code\modules\wireless\devices.dm"
 #include "code\modules\wireless\interfaces.dm"
