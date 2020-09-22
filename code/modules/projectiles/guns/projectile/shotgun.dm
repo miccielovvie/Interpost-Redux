@@ -74,7 +74,7 @@
 	name = "coneax shotgun"
 	desc = "A old shotgun with rusted steel and a rugged look to it, this sure will bring a victory to the battle."
 	icon_state = "raider_gun2"
-	item_state = "cshotgun"
+	item_state = "sshotgun"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	max_shells = 42
 	ammo_type = /obj/item/ammo_casing/shotgun

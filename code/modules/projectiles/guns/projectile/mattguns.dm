@@ -57,7 +57,7 @@
 	name = "Remedy mk1 rifle"
 	desc = "A old wooden model of a bolt action. Seems to be pretty clean."
 	icon_state = "remedymk1"
-	item_state = "mosin2"
+	item_state = "remedymk1"
 	wielded_item_state = "mosin2-wielded"
 	jam_chance = 1
 	//pumpsound = 'sound/weapons/newrifle_reload.ogg'
