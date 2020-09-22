@@ -372,7 +372,7 @@
 
 /obj/item/ammo_magazine/ak47
 	name = "AK-C45 magazine (7.62x39)"
-	icon_state = "c5.56b"
+	icon_state = "c762"
 	mag_type = MAGAZINE
 	caliber = "a762x39"
 	matter = list(DEFAULT_WALL_MATERIAL = 1800)
