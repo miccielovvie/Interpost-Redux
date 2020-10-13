@@ -196,6 +196,14 @@
 	..()
 	icon_state = "fullgrass_[rand(1, 3)]"
 
+/obj/structure/flora/ausbushes/hellgrass
+	icon_state = "hell_grass"
+
+/obj/structure/flora/ausbushes/hellgrass2
+	icon_state = "hell_grass2"
+
+/obj/structure/flora/ausbushes/hellgrass3
+	icon_state = "hell_grass3"
 
 //potted plants credit: Flashkirby
 /obj/structure/flora/pottedplant
