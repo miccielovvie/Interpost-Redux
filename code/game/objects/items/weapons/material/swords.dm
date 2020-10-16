@@ -216,10 +216,10 @@
 	parry_sounds = list('sound/weapons/blade_parry1.ogg', 'sound/weapons/blade_parry2.ogg', 'sound/weapons/blade_parry3.ogg')
 	drop_sound = 'sound/items/drop_sword.ogg'
 
-/obj/item/weapon/material/sword/bone
+/obj/item/weapon/material/sword/bonesword
 	name = "bone sword"
 	desc = "A medium sized sword made of flesh and bone."
-	icon_state = "zweihander"
+	icon_state = "bonesword"
 	item_state = "longsword"
 	force_divisor = 0.3
 	block_chance = 20
