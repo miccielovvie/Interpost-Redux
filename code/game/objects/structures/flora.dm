@@ -293,6 +293,15 @@
 	icon_state = "plant-09"
 	set_light(l_range = 2, l_power = 2, l_color = "#007fff")
 
+/obj/structure/flora/hellglos
+	name = "flesh glos"
+	desc = "A greenish light source."
+	icon = 'icons/obj/miscobjs.dmi'
+	icon_state = "hellglos"
+	density = 1
+	anchored = 1
+	set_light(l_range = 5, l_power = 2, l_color = "#33ff9c")
+
 /obj/structure/flora/pottedplant/orientaltree
 	name = "potted oriental tree"
 	desc = "This is a rather oriental style tree. It's flowers are bright pink."
