@@ -29,14 +29,14 @@
 /mob/living/simple_animal/hostile/faithless/Process_Spacemove(var/check_drift = 0)
 	if(rand(1/20)==1)
 		var/attack_sound = "sound/effects/Cultistemessage[pick(1,10)].ogg"
-		playsound(src.loc, attack_sound, 75, 1)
+		playsound(src.loc, attack_sound, 75, 0)
 	return 1
 
 /mob/living/simple_animal/hostile/faithless/FindTarget()
 	. = ..()
 	if(.)
 		var/attack_sound = "sound/effects/Cultistemessage[pick(1,10)].ogg"
-		playsound(src.loc, attack_sound, 75, 1)
+		playsound(src.loc, attack_sound, 75, 0)
 		audible_emote("wails at [.]")
 
 /mob/living/simple_animal/hostile/faithless/AttackingTarget()
@@ -45,7 +45,7 @@
 	if(istype(L))
 		if(prob(12))
 			L.Weaken(3)
-			playsound(src.loc, "sound/effects/xom_laugh.ogg", 75, 1)
+			playsound(src.loc, "sound/effects/xom_laugh.ogg", 75, 0)
 			L.visible_message("<span class='danger'>\the [src] knocks down \the [L]!</span>")
 
 /mob/living/simple_animal/hostile/faithless/cult
