@@ -360,8 +360,8 @@
 	if (ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.thirst <= THIRST_LEVEL_THIRSTY)
-			var/datum/reagents/reagents = new/datum/reagents(3)
 			var/amount_per_transfer_from_this = 3
+			var/datum/reagents/reagents = create_reagents(amount_per_transfer_from_this )
 			reagents.add_reagent(/datum/reagent/water, amount_per_transfer_from_this)
 			to_chat(usr, "<span class='notice'>You use your hands to gulp down water.</span>")
 			reagents.trans_to_mob(user, issmall(user) ? ceil(amount_per_transfer_from_this/2) : amount_per_transfer_from_this, CHEM_INGEST)
