@@ -79,7 +79,7 @@
 			if(prob(5))
 				to_chat(owner, "<span class='warning'>You could really use a drink!</span>")
 			else if(prob(6))
-				to_chat(owner, "<span class='warning'>Your mouoth feels really dry...</span>")
+				to_chat(owner, "<span class='warning'>Your mouth feels really dry...</span>")
 		if(0 to THIRST_LEVEL_DEHYDRATED)
 			owner.add_event("thirst", /datum/happiness_event/thirst/dehydrated)
 			if(prob(5))
