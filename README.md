@@ -1,6 +1,6 @@
 # Interpost Redux
 
-https://piskel-imgstore-b.appspot.com/img/bda2f161-1d61-11eb-afee-e1e6b73c6799.gif
+
 
 [This project is alive.]
 ---
