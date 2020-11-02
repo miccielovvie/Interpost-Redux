@@ -24,7 +24,7 @@
 						/datum/job/engineer,
 						/datum/job/chaplain,
 						//datum/job/jester
-						///datum/job/assistant,
+						///datum/job/bum,
 						///datum/job/cadet
 						///datum/job/ouvrier
 						///datum/job/jr_upkeep
@@ -207,11 +207,11 @@
 						///datum/job/chaplain,
 						)
 
-/datum/job/assistant
-	title = "Assistant"
+/datum/job/bum
+	title = "refugee"
 	supervisors = "everyone"
 	minimal_player_age = 14
-	economic_modifier = 1
+	economic_modifier = 0
 	ideal_character_age = 21
 	alt_titles = null
 	social_class = SOCIAL_CLASS_MIN
