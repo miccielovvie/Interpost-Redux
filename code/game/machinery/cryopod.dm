@@ -543,7 +543,6 @@
 /obj/machinery/cryopod/proc/set_occupant(var/mob/living/carbon/occupant)
 	src.occupant = occupant
 	if(!occupant)
-		SetName(initial(name))
 		return
 
 	occupant.stop_pulling()
@@ -553,5 +552,4 @@
 	occupant.forceMove(src)
 	time_entered = world.time
 
-	SetName("[name] ([occupant])")
 	icon_state = occupied_icon_state
