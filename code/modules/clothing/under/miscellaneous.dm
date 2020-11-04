@@ -657,6 +657,12 @@
 	icon_state = "marine"
 	worn_state = "marine"
 
+/obj/item/clothing/under/hell
+	name = "skin rug"
+	desc = "A skin uniform of sorts."
+	icon_state = "hell"
+	worn_state = "hell"
+
 /obj/item/clothing/under/freelancer
 	name = "casual suit"
 	desc = "A casual outfit composed of blue jeans and a beige shirt."

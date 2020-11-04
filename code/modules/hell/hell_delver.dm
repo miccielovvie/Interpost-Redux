@@ -35,12 +35,8 @@ GLOBAL_DATUM_INIT(delver, /datum/antagonist/delver, new)
 /datum/antagonist/delver/equip(var/mob/living/carbon/human/player)
 
 	//Special radio setup
-	player.equip_to_slot_or_del(new /obj/item/clothing/under/soviet(src), slot_w_uniform)
+	player.equip_to_slot_or_del(new /obj/item/clothing/under/hell(src), slot_w_uniform)
 	player.equip_to_slot_or_del(new /obj/item/device/flashlight/lantern(src), slot_belt)
-	player.equip_to_slot_or_del(new /obj/item/weapon/gun/projectile/shotgun/pump/boltaction/shitty (src), slot_back)
-	player.equip_to_slot_or_del(new /obj/item/stack/bullets/rifle(5), slot_l_store)
-	player.equip_to_slot_or_del(new /obj/item/stack/bullets/rifle(5), slot_r_store)
-	player.equip_to_slot_or_del(new	/obj/item/clothing/shoes/black, slot_shoes)
 	player.generate_stats(STAT_ST)
 	player.generate_skills("melee", "ranged")
 

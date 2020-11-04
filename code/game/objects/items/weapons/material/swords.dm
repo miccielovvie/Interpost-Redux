@@ -216,6 +216,21 @@
 	parry_sounds = list('sound/weapons/blade_parry1.ogg', 'sound/weapons/blade_parry2.ogg', 'sound/weapons/blade_parry3.ogg')
 	drop_sound = 'sound/items/drop_sword.ogg'
 
+/obj/item/weapon/material/sword/noisca
+	name = "noisca"
+	desc = "A golden blade made of unknown material."
+	icon_state = "noisca"
+	item_state = "longsword"
+	force_divisor = 2.4
+	block_chance = 50
+	w_class = ITEM_SIZE_HUGE
+	drawsound = 'sound/items/unholster_sword02.ogg'
+	equipsound = 'sound/items/holster_sword1.ogg'
+	sharpness = 25
+	weapon_speed_delay = 30
+	parry_sounds = list('sound/weapons/blade_parry1.ogg', 'sound/weapons/blade_parry2.ogg', 'sound/weapons/blade_parry3.ogg')
+	drop_sound = 'sound/items/drop_sword.ogg'
+
 /obj/item/weapon/material/sword/bonesword
 	name = "bone sword"
 	desc = "A medium sized sword made of flesh and bone."
