@@ -37,6 +37,6 @@
 		M.fire_stacks = 1
 		M.IgniteMob()
 	else
-		AM.visible_message("<span class=\"warning\">\The [AM] falls into \the [src] lava nad ignites</span>",\
+		AM.visible_message("<span class=\"warning\">\The [AM] falls into \the [src] lava and ignites</span>",\
 		"<span class=\"warning\">You hear a loud crack as you are washed with a wave of heat.</span>")
 
