@@ -6,7 +6,7 @@
 	desc = "95% Polyester, 5% Spandex!"
 	gender = PLURAL
 	body_parts_covered = LOWER_TORSO
-	item_icons = list(slot_w_uniform_str = 'icons/mob/onmob/pants.dmi')
+	item_state = list(slot_w_uniform_str = 'icons/mob/onmob/pants.dmi')
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/pants.dmi',
 		)
@@ -17,7 +17,7 @@
 
 /obj/item/clothing/under/shorts/green
 	name = "green athletic shorts"
-	color = "#3c1818"
+	color = "#007223"
 
 /obj/item/clothing/under/shorts/blue
 	name = "blue athletic shorts"
