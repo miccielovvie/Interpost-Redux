@@ -1,7 +1,7 @@
 "aa" = (/turf/unsimulated/hellwall,/area/exoplanet)
 "ab" = (/turf/unsimulated/mineral,/area/exoplanet)
 "ac" = (/turf/simulated/floor/helldirt,/area/exoplanet)
-"ad" = (/turf/unsimulated/wall/supermatter/hell,/area/exoplanet)
+"ad" = (/turf/simulated/floor/airless/lava,/area/exoplanet)
 "ae" = (/obj/structure/flora/tree/hell,/turf/simulated/floor/helldirt,/area/exoplanet)
 "af" = (/obj/structure/flora/ausbushes/hellgrass4,/turf/simulated/floor/helldirt,/area/exoplanet)
 "ag" = (/obj/structure/flora/ausbushes/hellgrass3,/turf/simulated/floor/helldirt,/area/exoplanet)
