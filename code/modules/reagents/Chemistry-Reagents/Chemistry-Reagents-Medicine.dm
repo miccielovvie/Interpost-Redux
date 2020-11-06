@@ -760,3 +760,40 @@
 		M.immunity = max(M.immunity - 0.1, 0)
 		if(M.chem_doses[type] > M.species.blood_volume/8) //half of blood was replaced with us, rip white bodies
 			M.immunity = max(M.immunity - 0.5, 0)
+
+/datum/reagent/sj8
+	name = "SJ-8"
+	description = "A combat stimulant liquid."
+	taste_description = "strength and a rush"
+	reagent_state = LIQUID
+	color = "#297dcc"
+	scannable = 1
+	overdose = 10
+	metabolism = 1
+/datum/reagent/sj8/affect_blood(var/mob/living/carbon/human/M, var/alien, var/removed)
+	if(alien == IS_DIONA)
+		return
+
+	if(M.chem_doses[type] < 0.8)	//not that effective after initial rush
+		M.add_chemical_effect(CE_PAINKILLER, min(90*volume, 140))
+		M.add_chemical_effect(CE_PULSE, 2)
+	else if(M.chem_doses[type] < 2)
+		M.add_chemical_effect(CE_PAINKILLER, min(40*volume, 70))
+	M.add_chemical_effect(CE_PULSE, 3)
+	if(M.chem_doses[type] > 10)
+		M.make_jittery(10)
+	if(volume >= 5 && M.is_asystole())
+		remove_self(5)
+		M.resuscitate()
+	if(volume <= 0.1 && M.chem_doses[type] >= 0.5 && world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY)
+		data = world.time
+		to_chat(M, "<span class='warning'>Your mind feels much less stable...</span>")
+	else
+		M.add_chemical_effect(CE_MIND, 2)
+		if(world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY)
+			data = world.time
+			if(prob(50))
+				to_chat(M, "<span class='notice'>Your mind feels much more stable.</span>")
+			else
+				to_chat(M, "<span class='warning'>Your mind breaks apart...</span>")
+				M.hallucination(200, 100)

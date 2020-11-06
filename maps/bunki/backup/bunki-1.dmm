@@ -1,5 +1,5 @@
-"a" = (/turf/unsimulated/mineral,/turf/simulated/floor/exoplanet/grass)
-"b" = (/turf/simulated/mineral/random,/turf/simulated/floor/exoplanet/grass)
+"a" = (/turf/unsimulated/mineral,/area/exoplanet/grass)
+"b" = (/turf/simulated/mineral/random,/area/exoplanet/grass)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

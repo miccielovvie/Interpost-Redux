@@ -24,7 +24,7 @@
 						/datum/job/engineer,
 						/datum/job/chaplain,
 						//datum/job/jester
-						///datum/job/bum,
+						/datum/job/bum,
 						///datum/job/cadet
 						///datum/job/ouvrier
 						///datum/job/jr_upkeep
@@ -210,6 +210,7 @@
 /datum/job/bum
 	title = "refugee"
 	supervisors = "everyone"
+	department = "Civilian"
 	minimal_player_age = 14
 	economic_modifier = 0
 	ideal_character_age = 21

@@ -147,6 +147,15 @@
 	density = 1
 	anchored = 1
 
+/obj/structure/hellhead
+	name = "flesh head"
+	desc = "A head with flesh and bone that seems to levitate."
+	icon = 'icons/obj/miscobjs.dmi'
+	icon_state = "hellhead"
+	layer = ABOVE_WINDOW_LAYER
+	density = 0
+	anchored = 1
+
 /obj/structure/hellskull
 	name = "skull"
 	desc = "A lost soul."
