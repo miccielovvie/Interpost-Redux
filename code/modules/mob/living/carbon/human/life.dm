@@ -427,9 +427,9 @@
 	if (species.passive_temp_gain)
 		bodytemperature += species.passive_temp_gain
 
-	// Robolimbs cause overheating too.
-	if(robolimb_count)
-		bodytemperature += round(robolimb_count/2)
+	// Robolimbs cause overheating too. Commented because it's awful.
+	//if(robolimb_count)
+		//bodytemperature += round(robolimb_count/2)
 
 	if (species.body_temperature == null || isSynthetic())
 		return //this species doesn't have metabolic thermoregulation
