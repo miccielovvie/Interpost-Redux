@@ -110,7 +110,6 @@ GLOBAL_LIST_EMPTY(music_players)
 	if(!get_cell() || !cell.checked_use(power_usage * CELLRATE))
 		StopPlaying()
 		visible_message(SPAN_WARNING("\The [src]'s power meter flashes a battery warning and refuses to operate."))
-		return PROCESS_KILL
 
 /obj/item/music_player/proc/set_mode(value)
 	if(value == mode)
@@ -133,7 +132,10 @@ GLOBAL_LIST_EMPTY(music_players)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	switch(mode)
 		if(PLAYER_STATE_OFF)
-			set_mode(PLAYER_STATE_PLAY)
+			if(!get_cell() || !cell.checked_use(power_usage * CELLRATE))
+				return
+			else
+				set_mode(PLAYER_STATE_PLAY)
 		if(PLAYER_STATE_PLAY)
 			set_mode(PLAYER_STATE_OFF)
 		if(PLAYER_STATE_PAUSE)
