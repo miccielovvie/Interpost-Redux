@@ -27,14 +27,12 @@
 	query_set_chromosomes.Execute()
 	qdel(query_set_chromosomes)
 	if(ann)
-		to_chat(src, "<span class='rose bold'>Your new CHR count is [chr_count]!</span>")
+		to_chat(src, "<span class='rose bold'>Your new INC count is [chr_count]!</span>")
 
 /client/proc/inc_chrbalance(chr_count, reason=null)
 	var/dbckey = sql_sanitize_text(ckey)
 	establish_db_connection()
 
-	if(chr_count >= 0)
-		return
 	var/DBQuery/query_inc_chr = dbcon.NewQuery(
 		"UPDATE erro_player SET chromosome = chromosome + :chr_count WHERE key = '[dbckey]'",
 		list("chr_count" = chr_count, "ckey" = ckey)
