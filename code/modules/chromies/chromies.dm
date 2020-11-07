@@ -3,8 +3,8 @@
 	establish_db_connection()
 
 	var/DBQuery/query_get_chromies = dbcon.NewQuery(
-		"SELECT chromosome FROM erro_player WHERE ckey = '[dbckey]'",
-		list("dbckey" = ckey)
+		"SELECT chromosome FROM erro_player WHERE ckey = :ckey",
+		list("ckey" = ckey)
 	)
 
 	query_get_chromies.Execute()
@@ -21,8 +21,8 @@
 	establish_db_connection()
 
 	var/DBQuery/query_set_chromosomes = dbcon.NewQuery(
-		"UPDATE erro_player SET chromosome = :chr_count WHERE key = '[dbckey]'",
-		list("chr_count" = chr_count, "dbckey" = ckey)
+		"UPDATE erro_player SET chromosome = :chr_count WHERE key = :ckey",
+		list("chr_count" = chr_count, "ckey" = ckey)
 	)
 	query_set_chromosomes.Execute()
 	qdel(query_set_chromosomes)
@@ -34,8 +34,8 @@
 	establish_db_connection()
 
 	var/DBQuery/query_inc_chr = dbcon.NewQuery(
-		"UPDATE erro_player SET chromosome = chromosome + :chr_count WHERE key = '[dbckey]'",
-		list("chr_count" = chr_count, "dbckey" = ckey)
+		"UPDATE erro_player SET chromosome = chromosome + :chr_count WHERE key = :ckey",
+		list("chr_count" = chr_count, "ckey" = ckey)
 	)
 	query_inc_chr.Execute()
 	qdel(query_inc_chr)
