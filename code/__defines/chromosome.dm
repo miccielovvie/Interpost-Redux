@@ -1,1 +1,1 @@
-#define STAT_CHR "chr"
+#define STAT_CHR "INC"
