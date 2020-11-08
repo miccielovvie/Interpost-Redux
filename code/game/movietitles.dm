@@ -15,7 +15,8 @@ client
 		GLOB.end_titles = generate_titles()
 
 	LAZYINITLIST(credits)
-
+	for(var/obj/item/music_player/player in GLOB.music_players)
+		player.Destroy()
 	if(mob)
 		mob.overlay_fullscreen("fishbed",/obj/screen/fullscreen/fishbed)
 		mob.overlay_fullscreen("fadeout",/obj/screen/fullscreen/fadeout)
