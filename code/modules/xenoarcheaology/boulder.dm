@@ -45,7 +45,7 @@
 	if(istype(I, /obj/item/weapon/pickaxe))
 		var/obj/item/weapon/pickaxe/P = I
 		//Only really here for stat levelup
-		user.skillcheck(user.skills["mining"], 70, "You're really not any good at mining...", "mining")
+		user.skillcheck(user.skills["mining"], 40, "You're really not any good at mining...", "mining")
 		if(last_act + P.get_digspeed(user) > world.time)//prevents message spam
 			return
 		last_act = world.time

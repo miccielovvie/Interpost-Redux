@@ -203,7 +203,7 @@ var/list/mining_floors = list()
 				finds.Remove(finds[1])
 				if(prob(50))
 					artifact_debris()
-		user.skillcheck(user.skills["mining"], 70, "You're really not any good at mining...", "mining")
+		user.skillcheck(user.skills["mining"], 40, "You're really not any good at mining...", "mining")
 		if(do_after(user,P.get_digspeed(user), src))
 			if(finds && finds.len)
 				var/datum/find/F = finds[1]

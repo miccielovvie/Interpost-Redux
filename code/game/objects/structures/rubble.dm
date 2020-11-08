@@ -15,7 +15,7 @@
 
 /obj/structure/rubble/New()
 	..()
-	if(prob(emptyprob)) 
+	if(prob(emptyprob))
 		lootleft = 0
 
 /obj/structure/rubble/Initialize()
@@ -55,19 +55,19 @@
 		lootleft--
 		update_icon()
 		to_chat(user, "<span class='notice'>You find \a [booty] and pull it carefully out of \the [src].</span>")
-		
+
 /obj/structure/rubble/attackby(var/obj/item/I, var/mob/user)
 	if (istype(I, /obj/item/weapon/pickaxe))
 		var/obj/item/weapon/pickaxe/P = I
 		visible_message("[user] starts clearing away \the [src].")
-		user.skillcheck(user.skills["mining"], 70, "You're really not any good at mining...", "mining")
+		user.skillcheck(user.skills["mining"], 40, "You're really not any good at mining...", "mining")
 		if(do_after(user,P.get_digspeed(user), src))
 			visible_message("[user] clears away \the [src].")
 			if(lootleft && prob(1))
 				var/obj/item/booty = pick(loot)
 				booty = new booty(loc)
 			qdel(src)
-	else 
+	else
 		..()
 		health -= I.force
 		if(health < 1)

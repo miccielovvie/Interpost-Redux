@@ -62,7 +62,7 @@
 
 //Used to add mining skill to digging speed
 /obj/item/weapon/pickaxe/proc/get_digspeed(var/mob/user)
-	return digspeed - user.skills[SKILL_MINE] * 0.1 // -10 is the best you can do
+	return digspeed - user.skills[SKILL_MINE] * 0.2 // made it better?
 
 /obj/item/weapon/pickaxe/hammer
 	name = "sledgehammer"
