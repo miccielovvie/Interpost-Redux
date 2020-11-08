@@ -114,6 +114,28 @@
 	siemens_coefficient = 0.9
 	body_parts_covered = HEAD|FACE|EYES
 
+/obj/item/clothing/mask/faceless
+	name = "faceless mask"
+	desc = "A white mask with only two black holes for the eyes."
+	icon_state = "faceless"
+	item_state = "faceless"
+	flags_inv = HIDEFACE|BLOCKHAIR
+	w_class = ITEM_SIZE_SMALL
+	siemens_coefficient = 0.9
+	body_parts_covered = HEAD|FACE|EYES
+	armor = list(melee = 40, bullet = 40, laser = 10,energy = 15, bomb = 30, bio = 100, rad = 30)
+
+/obj/item/clothing/mask/facelessgold
+	name = "golden faceless mask"
+	desc = "A golden mask with only two black holes for the eyes."
+	icon_state = "facelessgold"
+	item_state = "facelessgold"
+	flags_inv = HIDEFACE|BLOCKHAIR
+	w_class = ITEM_SIZE_SMALL
+	siemens_coefficient = 0.9
+	body_parts_covered = HEAD|FACE|EYES
+	armor = list(melee = 40, bullet = 40, laser = 10,energy = 15, bomb = 30, bio = 100, rad = 30)
+
 /obj/item/clothing/mask/horsehead
 	name = "horse head mask"
 	desc = "A mask made of soft vinyl and latex, representing the head of a horse."

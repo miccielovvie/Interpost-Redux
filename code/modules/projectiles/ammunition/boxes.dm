@@ -350,6 +350,16 @@
 	max_ammo = 20
 	multiple_sprites = 1
 
+/obj/item/ammo_magazine/berzerker
+	name = "berzerker magazine (5.56mm)"
+	icon_state = "berzerker"
+	mag_type = MAGAZINE
+	caliber = "a556"
+	matter = list(DEFAULT_WALL_MATERIAL = 1800)
+	ammo_type = /obj/item/ammo_casing/a556
+	max_ammo = 20
+	multiple_sprites = 1
+
 /obj/item/ammo_magazine/ctac
 	name = "CTAC magazine (7.62x51)"
 	icon_state = "ctac_high"

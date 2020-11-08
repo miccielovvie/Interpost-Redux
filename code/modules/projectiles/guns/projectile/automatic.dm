@@ -119,7 +119,7 @@
 	icon_state = "arifle"
 	item_state = null
 	w_class = ITEM_SIZE_HUGE
-	force = 10
+	force = 23
 	caliber = "a556"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
 	slot_flags = SLOT_BACK
@@ -130,7 +130,8 @@
 	wielded_item_state = "arifle-wielded"
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
-
+	attack_verb = list ("stabbed", "sliced")
+	hitsound = "stab_sound"
 
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
 	firemodes = list(
@@ -144,11 +145,41 @@
 	wielded_item_state = (ammo_magazine)? "arifle-wielded" : "arifle-wielded-empty"
 	..()
 
+/obj/item/weapon/gun/projectile/automatic/berzerker
+	name = "berzerker battle rifle"
+	desc = "The berzerker battle rifle is a common gun used by mercenaries throughout the universe. Has a bayonet attached."
+	icon_state = "berzerker"
+	item_state = "rifle1"
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	caliber = "a556"
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	slot_flags = SLOT_BACK
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/berzerker
+	allowed_magazines = /obj/item/ammo_magazine/berzerker
+	one_hand_penalty = 3
+	wielded_item_state = "arifle-wielded"
+	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
+
+
+	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=3,    move_delay=null, one_hand_penalty=2, burst_accuracy=null, dispersion=null, automatic = 0),
+		list(mode_name="3-round bursts", burst=3, fire_delay=3, move_delay=2,    one_hand_penalty=5, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 0.6, 1.0), automatic = 0),
+		list(mode_name="automatic",   burst=1, fire_delay=3, move_delay=2,    one_hand_penalty=6, burst_accuracy=list(0,-1,-2,-3,-3), dispersion=list(0.6, 1.0, 1.2, 1.2, 1.5), automatic = 1),
+		)
+
+/obj/item/weapon/gun/projectile/automatic/berzerker/update_icon()
+	icon_state = (ammo_magazine)? "berzerker" : "berzerker_empty"
+	..()
+
 /obj/item/weapon/gun/projectile/automatic/ak47
 	name = "AK-C45"
 	desc = "This old gun was pretty iconic in the old world. It seems to be fake wood on this rifle."
 	icon_state = "ak47"
-	item_state = null
+	item_state = "rifle1"
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = "a762x39"
@@ -178,7 +209,7 @@
 	name = "LR-204 rifle"
 	desc = "The LR-204 is a civilian assault rifle and is common to most people. This rifle is very easy to modify and easy to maintain."
 	icon_state = "lr204"
-	item_state = null
+	item_state = "rifle1"
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = "a556"
@@ -207,7 +238,7 @@
 	name = "CTAC B-2 rifle"
 	desc = "The special CTAC B-2 is a durable automatic rifle used by special forces. It uses A.P.T to land accurate and precise hits on the target. Uses 5.56mm rounds."
 	icon_state = "tacticalgun"
-	item_state = null
+	item_state = "rifle1"
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = "a762x39"

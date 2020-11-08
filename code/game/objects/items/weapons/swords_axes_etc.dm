@@ -130,3 +130,29 @@
 		if(default_sword_parry(user, damage, damage_source, attacker, def_zone, attack_text))
 			return 1
 	return 0
+
+/obj/item/weapon/melee/punisher
+	name = "Punisher"
+	desc = "A purple bat."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "punisher"
+	item_state = "punisher"
+	parry_sounds = list('sound/weapons/blade_parry1.ogg', 'sound/weapons/blade_parry2.ogg', 'sound/weapons/blade_parry3.ogg')
+	slot_flags = SLOT_BELT
+	block_chance = 30
+	force = 10
+	var/stunforce = 1 //10 was way to high
+	var/agonyforce = 13
+
+/obj/item/weapon/melee/club
+	name = "steel club"
+	desc = "A steel mace used to smash skulls."
+	icon = 'icons/obj/weapons.dmi'
+	icon_state = "club"
+	item_state = "mace"
+	parry_sounds = list('sound/weapons/blade_parry1.ogg', 'sound/weapons/blade_parry2.ogg', 'sound/weapons/blade_parry3.ogg')
+	slot_flags = SLOT_BELT
+	block_chance = 30
+	force = 18
+	var/stunforce = 1 //10 was way to high
+	var/agonyforce = 20

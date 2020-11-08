@@ -523,6 +523,13 @@
 	armor = list(melee = 40, bullet = 100, energy = 30, bomb = 70, bio = 10, rad = 5)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 
+/obj/item/clothing/suit/vest/civilian/faceless
+	name = "faceless vest"
+	desc = "A heavy suit armored with kevlar and protection pads."
+	icon_state = "faceless"
+	armor = list(melee = 70, bullet = 100, energy = 30, bomb = 70, bio = 10, rad = 5)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+
 /obj/item/clothing/suit/vest/military/merx
 	name = "tactical vest"
 	desc = "A bulletproof vest with webbing and neck and groin protection."

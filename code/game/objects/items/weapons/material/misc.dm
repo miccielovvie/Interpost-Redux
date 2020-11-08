@@ -66,6 +66,12 @@
 	icon_state = "machetedx"
 	item_state = "machete"
 
+/obj/item/weapon/material/hatchet/machete/faceless
+	name = "faceless machete"
+	desc = "A fine example of a machete, with a polymer handle and steel blade."
+	icon_state = "faceless"
+	item_state = "machete"
+
 /obj/item/weapon/material/hatchet/machete/old
 	name = "wooden machete"
 	desc = "A wooden machete, used to cut off pines."

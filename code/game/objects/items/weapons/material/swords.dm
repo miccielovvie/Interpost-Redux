@@ -464,23 +464,6 @@
 	sharp = 0
 	edge = 0
 
-/obj/item/weapon/material/sword/club
-	name = "steel club"
-	desc = "A blunt force weapon. You do not want to get hit with this."
-	icon_state = "steelclub2"
-	item_state = "mace"
-	force_divisor = 0.8
-	block_chance = 30
-	attack_verb = list("bashed", "smashed", "slammed", "smacked")
-	hitsound = "bash1.ogg"
-	w_class = ITEM_SIZE_HUGE
-	drawsound = 'sound/items/unholster_sword02.ogg'
-	equipsound = 'sound/items/holster_sword1.ogg'
-	sharpness = 0
-	weapon_speed_delay = 27
-	drop_sound = 'sound/items/drop_sword.ogg'
-	sharp = 0
-	edge = 0
 
 /obj/item/weapon/material/sword/shithook
 	name = "a...what?"

@@ -657,6 +657,12 @@
 	icon_state = "marine"
 	worn_state = "marine"
 
+/obj/item/clothing/under/faceless
+	name = "faceless uniform"
+	desc = "A uniform used by mercenaries."
+	icon_state = "faceless"
+	worn_state = "faceless"
+
 /obj/item/clothing/under/hell
 	name = "skin rug"
 	desc = "A skin uniform of sorts."
