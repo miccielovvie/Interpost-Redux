@@ -1,8 +1,8 @@
 /decl/hierarchy/outfit/job/engineering
-	hierarchy_type = /decl/hierarchy/outfit/job/engineering
-	belt = /obj/item/weapon/storage/belt/utility/full
-	l_ear = /obj/item/device/radio/headset/headset_eng
-	shoes = /obj/item/clothing/shoes/workboots
+	hierarchy_type = null
+	belt = null
+	l_ear = null
+	shoes = null
 
 /decl/hierarchy/outfit/job/engineering/New()
 	..()
@@ -17,6 +17,16 @@
 	suit = null
 	id_type = /obj/item/weapon/card/id/engineering/head
 	pda_type = /obj/item/device/pda/heads/ce
+
+/decl/hierarchy/outfit/job/engineering/maintainer
+	name = OUTFIT_JOB_NAME("Maintainer")
+	l_ear = null
+	uniform = null
+	shoes = null
+	head = null
+	suit = null
+	id_type = /obj/item/weapon/card/id/engineering
+	pda_type = /obj/item/device/pda/engineering
 
 /decl/hierarchy/outfit/job/engineering/engineer
 	name = OUTFIT_JOB_NAME("Engineer")
