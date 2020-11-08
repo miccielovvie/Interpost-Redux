@@ -2,10 +2,7 @@
 	var/dbckey = sql_sanitize_text(ckey)
 	establish_db_connection()
 
-	var/DBQuery/query_get_chromies = dbcon.NewQuery(
-		"SELECT chromosome FROM erro_player WHERE ckey = '[dbckey]'",
-		list("dbckey" = dbckey)
-	)
+	var/DBQuery/query_get_chromies = dbcon.NewQuery("SELECT chromosome FROM erro_player WHERE ckey = '[dbckey]'")
 
 	query_get_chromies.Execute()
 
@@ -21,23 +18,17 @@
 	establish_db_connection()
 
 	var/DBQuery/query_set_chromosomes = dbcon.NewQuery(
-		"UPDATE erro_player SET chromosome = :chr_count WHERE key = '[dbckey]'",
-		list("chr_count" = chr_count, "ckey" = ckey)
-	)
+		"UPDATE erro_player SET chromosome = '[chr_count]' WHERE ckey = '[dbckey]'")
 	query_set_chromosomes.Execute()
 	qdel(query_set_chromosomes)
 	if(ann)
-		to_chat(src, "<span class='rose bold'>Your new CHR count is [chr_count]!</span>")
+		to_chat(src, "<span class='rose bold'>Your new INC count is [chr_count]!</span>")
 
 /client/proc/inc_chrbalance(chr_count, reason=null)
 	var/dbckey = sql_sanitize_text(ckey)
 	establish_db_connection()
 
-	if(chr_count >= 0)
-		return
 	var/DBQuery/query_inc_chr = dbcon.NewQuery(
-		"UPDATE erro_player SET chromosome = chromosome + :chr_count WHERE key = '[dbckey]'",
-		list("chr_count" = chr_count, "ckey" = ckey)
-	)
+		"UPDATE erro_player SET chromosome = chromosome + '[chr_count]' WHERE ckey = '[dbckey]'")
 	query_inc_chr.Execute()
 	qdel(query_inc_chr)
