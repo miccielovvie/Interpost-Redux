@@ -214,3 +214,8 @@
 	description = "<span class='danger'>I shouldn't have taken so much drugs!</span>\n"
 	happiness = -15
 	timeout = 1800
+
+/datum/happiness_event/experience
+	description = "<span class='danger'>I need to sleep on my experiences</span>\n"
+	happiness = 5
+	timeout = 10 MINUTES

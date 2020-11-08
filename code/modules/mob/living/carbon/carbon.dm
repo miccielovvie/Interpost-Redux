@@ -384,6 +384,15 @@
 		for (var/object in objs)
 			if (istype(object,/obj/structure/bed/))
 				in_bed = 1
+		if(ishuman(usr))
+			var/mob/living/carbon/human/H = usr		
+			for(var/event in H.events)
+				if(H.stats[event])
+					H.stats[event] += 1
+				else if (H.skills[event])
+					H.skills[event] += 5
+				clear_event(event)
+			H.event
 
 /mob/living/carbon/Bump(var/atom/movable/AM, yes)
 	if(now_pushing || !yes)
