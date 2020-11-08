@@ -208,7 +208,8 @@
 						)
 
 /datum/job/bum
-	title = "refugee"
+	selection_color = "#9c9c9c"
+	title = "Refugee"
 	supervisors = "everyone"
 	department = "Civilian"
 	minimal_player_age = 14
