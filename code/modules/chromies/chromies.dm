@@ -23,7 +23,7 @@
 		to_chat(usr,"<span class='error'>Failed to set INC: db error</span>")
 		return
 
-	var/DBQuery/query = dbcon.NewQuery("UPDATE erro_player SET chromosome = '[chr_count]' WHERE ckey = '[dbckey]'")
+	var/DBQuery/query = dbcon.NewQuery("UPDATE erro_player SET chromosome='[chr_count]' WHERE ckey = '[dbckey]'")
 	
 	query.Execute()
 	qdel(query)
@@ -37,7 +37,7 @@
 		to_chat(usr,"<span class='error'>Failed to add INC: db error</span>")
 		return
 
-	var/DBQuery/query = dbcon.NewQuery("UPDATE erro_player SET chromosome = chromosome + '[chr_count]' WHERE ckey = '[dbckey]'")
+	var/DBQuery/query = dbcon.NewQuery("UPDATE erro_player SET chromosome=chromosome+'[chr_count]' WHERE ckey = '[dbckey]'")
 	
 	query.Execute()
 	qdel(query)
