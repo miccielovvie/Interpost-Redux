@@ -149,7 +149,7 @@
 	name = "berzerker battle rifle"
 	desc = "The berzerker battle rifle is a common gun used by mercenaries throughout the universe. Has a bayonet attached."
 	icon_state = "berzerker"
-	item_state = "rifle1"
+	item_state = "berzerker"
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = "a556"
@@ -159,7 +159,7 @@
 	magazine_type = /obj/item/ammo_magazine/berzerker
 	allowed_magazines = /obj/item/ammo_magazine/berzerker
 	one_hand_penalty = 3
-	wielded_item_state = "arifle-wielded"
+	wielded_item_state = "berzerker"
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
 
