@@ -7,10 +7,10 @@
 	query.Execute()
 
 	var/chr_count = 0
-	if(query_get_chromies.NextRow())
-		chr_count = query_get_chromies.item[1]
+	if(query.NextRow())
+		chr_count = query.item[1]
 
-	qdel(query_get_chromies)
+	qdel(query)
 	return num2text(chr_count)
 
 /client/proc/set_chr_count(chr_count, ann=FALSE)
@@ -20,7 +20,7 @@
 	var/DBQuery/query = dbcon.NewQuery("UPDATE erro_player SET chromosome = '[chr_count]' WHERE ckey = '[dbckey]'")
 	
 	query.Execute()
-	qdel(query_set_chromosomes)
+	qdel(query)
 	if(ann)
 		to_chat(src, "<span class='rose bold'>Your new INC count is [chr_count]!</span>")
 
@@ -31,4 +31,4 @@
 	var/DBQuery/query = dbcon.NewQuery("UPDATE erro_player SET chromosome = chromosome + '[chr_count]' WHERE ckey = '[dbckey]'")
 	
 	query.Execute()
-	qdel(query_inc_chr)
+	qdel(query)
