@@ -392,7 +392,6 @@
 				else if (H.skills[event])
 					H.skills[event] += 5
 				clear_event(event)
-			H.event
 
 /mob/living/carbon/Bump(var/atom/movable/AM, yes)
 	if(now_pushing || !yes)
