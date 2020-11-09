@@ -134,7 +134,7 @@ TRAITOR_SCALING
 #PROTECT_ROLES_FROM_ANTAGONIST
 
 ## If cortical stacks are to be used instead of standard cloning.
-USE_CORTICAL_STACKS
+#USE_CORTICAL_STACKS
 
 ## Comment this out to stop admins being able to choose their personal ooccolor
 ALLOW_ADMIN_OOCCOLOR
