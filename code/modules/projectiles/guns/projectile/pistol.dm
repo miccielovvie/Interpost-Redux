@@ -180,6 +180,28 @@
 	else
 		icon_state = "maers14_empty"
 
+/obj/item/weapon/gun/projectile/faceless
+	name = "colt F2"
+	desc = "The colt F2 is a heavy modded pistol used by advanced mercenaries. Chambered in (45 ACP)."
+	icon_state = "maers14"
+	item_state = "pistol1"
+	w_class = ITEM_SIZE_SMALL
+	caliber = "a45acp"
+	silenced = 0
+	fire_delay = 1
+	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3, TECH_ILLEGAL = 3)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/colt
+	allowed_magazines = /obj/item/ammo_magazine/colt
+	jam_chance = 0
+
+/obj/item/weapon/gun/projectile/maers14/update_icon()
+	..()
+	if(ammo_magazine && ammo_magazine.stored_ammo.len)
+		icon_state = "maers14"
+	else
+		icon_state = "maers14_empty"
+
 /obj/item/weapon/gun/projectile/herculus
 	name = "Herculus BX-24"
 	desc = "A very fine and high-tech firearm. Chambered in (9mm)."

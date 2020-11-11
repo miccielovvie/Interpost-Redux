@@ -173,6 +173,20 @@
 /obj/item/ammo_magazine/maers14/empty
 	initial_ammo = 0
 
+/obj/item/ammo_magazine/colt
+	name = "Colt F2 magazine (45 ACP)"
+	icon_state = "shellguard"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	matter = list(DEFAULT_WALL_MATERIAL = 600)
+	caliber = "a45acp"
+	ammo_type = /obj/item/ammo_casing/a45acp
+	max_ammo = 8
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/colt/empty
+	initial_ammo = 0
+
 /obj/item/ammo_magazine/herculus
 	name = "Herculus BX-24 magazine (9mm)"
 	icon_state = "9mmm"

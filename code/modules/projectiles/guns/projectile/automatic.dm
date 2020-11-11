@@ -130,8 +130,6 @@
 	wielded_item_state = "arifle-wielded"
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
-	attack_verb = list ("stabbed", "sliced")
-	hitsound = "stab_sound"
 
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
 	firemodes = list(
@@ -143,6 +141,36 @@
 /obj/item/weapon/gun/projectile/automatic/sts35/update_icon()
 	icon_state = (ammo_magazine)? "arifle" : "arifle-empty"
 	wielded_item_state = (ammo_magazine)? "arifle-wielded" : "arifle-wielded-empty"
+	..()
+
+/obj/item/weapon/gun/projectile/automatic/merlos16
+	name = "Merlos-16"
+	desc = "The Merlos-16 is a common assault rifle. Uses 5.56mm rounds."
+	icon_state = "merlos16"
+	item_state = "merlos16"
+	w_class = ITEM_SIZE_HUGE
+	force = 23
+	caliber = "a556"
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 5)
+	slot_flags = SLOT_BACK
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/c556
+	allowed_magazines = /obj/item/ammo_magazine/c556
+	one_hand_penalty = 3
+	wielded_item_state = "merlos16"
+	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
+
+
+	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=2,    move_delay=null, one_hand_penalty=4, burst_accuracy=null, dispersion=null, automatic = 0),
+		list(mode_name="automatic",   burst=1, fire_delay=2, move_delay=3,    one_hand_penalty=4, burst_accuracy=list(0,-1,-2,-3,-3), dispersion=list(0.6, 1.0, 1.2, 1.2, 1.5), automatic = 1),
+		)
+
+/obj/item/weapon/gun/projectile/automatic/merlos16/update_icon()
+	icon_state = (ammo_magazine)? "merlos16" : "merlos16_merlos16"
+	wielded_item_state = (ammo_magazine)? "merlos16" : "merlos16"
 	..()
 
 /obj/item/weapon/gun/projectile/automatic/berzerker
@@ -162,7 +190,8 @@
 	wielded_item_state = "berzerker"
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
-
+	attack_verb = list ("stabbed", "sliced")
+	hitsound = "stab_sound"
 
 	//Assault rifle, burst fire degrades quicker than SMG, worse one-handing penalty, slightly increased move delay
 	firemodes = list(
@@ -179,7 +208,7 @@
 	name = "AK-C45"
 	desc = "This old gun was pretty iconic in the old world. It seems to be fake wood on this rifle."
 	icon_state = "ak47"
-	item_state = "rifle1"
+	item_state = "ak47"
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = "a762x39"
@@ -209,7 +238,7 @@
 	name = "LR-204 rifle"
 	desc = "The LR-204 is a civilian assault rifle and is common to most people. This rifle is very easy to modify and easy to maintain."
 	icon_state = "lr204"
-	item_state = "rifle1"
+	item_state = "arifle"
 	w_class = ITEM_SIZE_HUGE
 	force = 10
 	caliber = "a556"
@@ -230,7 +259,7 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/lr/update_icon()
-	icon_state = (ammo_magazine)? "arifle" : "arifle-empty"
+	icon_state = (ammo_magazine)? "lr204" : "lr204_empty"
 	wielded_item_state = (ammo_magazine)? "arifle-wielded" : "arifle-wielded-empty"
 	..()
 
@@ -261,7 +290,7 @@
 		)
 
 /obj/item/weapon/gun/projectile/automatic/tacticalgun/update_icon()
-	icon_state = (ammo_magazine)? "arifle" : "arifle-empty"
+	icon_state = (ammo_magazine)? "tacticalgun" : "tacticalgun_empty"
 	wielded_item_state = (ammo_magazine)? "arifle-wielded" : "arifle-wielded-empty"
 	..()
 
