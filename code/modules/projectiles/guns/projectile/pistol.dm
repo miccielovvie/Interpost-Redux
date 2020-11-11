@@ -183,7 +183,7 @@
 /obj/item/weapon/gun/projectile/faceless
 	name = "colt F2"
 	desc = "The colt F2 is a heavy modded pistol used by advanced mercenaries. Chambered in (45 ACP)."
-	icon_state = "maers14"
+	icon_state = "faceless"
 	item_state = "pistol1"
 	w_class = ITEM_SIZE_SMALL
 	caliber = "a45acp"

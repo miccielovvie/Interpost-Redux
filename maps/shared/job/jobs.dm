@@ -8,7 +8,7 @@
 						///datum/job/medassist
 						/datum/job/hos,
 						/datum/job/officer,
-						//datum/job/detective,
+						/datum/job/detective,
 						/datum/job/cmo,
 						/datum/job/doctor,
 						/datum/job/rd,
@@ -22,7 +22,7 @@
 						//datum/job/hydro,
 						/datum/job/janitor,
 						/datum/job/engineer,
-						/datum/job/chaplain,
+						//datum/job/chaplain,
 						/datum/job/jester,
 						/datum/job/bum,
 						///datum/job/cadet
