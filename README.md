@@ -16,6 +16,8 @@ All code where the authorship dates are not prior to `1420675200 +0000` is assum
 
 If you wish to develop and host this codebase in a closed source manner you may use all commits prior to `1420675200 +0000`, which are licensed under GPL v3.  The major change here is that if you host a server using any code licensed under AGPLv3 you are required to provide full source code for your servers users as well including addons and modifications you have made.
 
+All original art assets are © 2020 Interpost Redux. All rights reserved. You may not rip the original art assets and use them in your project without consent.
+
 See [here](https://www.gnu.org/licenses/why-affero-gpl.html) for more information.
 
 tgui clientside is licensed as a subproject under the MIT license.
@@ -24,5 +26,3 @@ tgui assets are licensed under a [Creative Commons Attribution-ShareAlike 4.0 In
 
 See tgui/LICENSE.md for the MIT license.
 See tgui/assets/fonts/SIL-OFL-1.1-LICENSE.md for the SIL Open Font License.
-
-All assets including icons and sound are under a [Creative Commons 3.0 BY-SA license](http://creativecommons.org/licenses/by-sa/3.0/) unless otherwise indicated.
