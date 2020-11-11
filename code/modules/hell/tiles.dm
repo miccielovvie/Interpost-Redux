@@ -14,7 +14,7 @@
 /turf/simulated/floor/airless/lava
 	name = "blood"
 	desc = "Looks like glowing blood, I dont think it is a good idea to touch it."
-	icon='blueriver.dmi'
+	icon='maps/away/blueriver/blueriver.dmi'
 	icon_state = "bloodf2"
 	opacity = 0
 	dynamic_lighting = 0

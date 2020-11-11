@@ -391,6 +391,11 @@
 			return
 		if ((!subject.ckey) || (!subject.client))
 			scantemp = "Error: Mental interface failure."
+			for(var/mob/observer/ghost/ghost in GLOB.player_list)
+				if(ghost.mind == subject.mind)
+					var/alert_sound = 'sound/misc/notice1.ogg'
+					playsound(ghost, alert_sound, 50, 1, -1)
+					to_chat(ghost, "<b><font color = 'red'><font size = 3>Your corpse has been placed into a cloning scanner. Return to your body if you want to be resurrected/cloned!</b> (Verbs -> Ghost -> Re-enter corpse)</font></font>")
 			return
 		if(subject.isSynthetic())
 			scantemp = "Error: Subject is not organic."
