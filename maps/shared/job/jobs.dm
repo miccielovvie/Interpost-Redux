@@ -23,7 +23,7 @@
 						/datum/job/janitor,
 						/datum/job/engineer,
 						/datum/job/chaplain,
-						/datum/job/jester
+						/datum/job/jester,
 						/datum/job/bum,
 						///datum/job/cadet
 						///datum/job/ouvrier
