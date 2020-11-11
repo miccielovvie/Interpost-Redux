@@ -6,7 +6,7 @@
 		set_stat(CONSCIOUS)
 		return
 
-	health = maxHealth - getBrainLoss() - (getBruteLoss() + getFireLoss() + getToxLoss() + getOxyLoss())
+	health = maxHealth - getBrainLoss() - getCloneLoss() - (getBruteLoss() + getFireLoss() + getToxLoss() + getOxyLoss())
 
 	//TODO: fix husking
 	if(((maxHealth - getFireLoss()) < config.health_threshold_dead) && stat == DEAD)

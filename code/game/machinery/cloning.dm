@@ -15,7 +15,7 @@
 	icon = 'icons/obj/cloning.dmi'
 	icon_state = "pod_0"
 	req_access = list(access_genetics) //For premature unlocking.
-	var/mob/living/occupant
+	var/mob/living/carbon/human/occupant
 	var/heal_level = 20 // The clone is released once its health reaches this percentage.
 	var/heal_rate = 1
 	var/locked = 0
@@ -56,7 +56,7 @@
 			rating += P.rating
 
 	heal_level = rating * 10 - 20
-	heal_rate = round(rating / 4)
+	heal_rate = round(rating / 2)
 
 /obj/machinery/clonepod/Destroy()
 	if(connected)
@@ -71,7 +71,7 @@
 /obj/machinery/clonepod/attack_hand(var/mob/user)
 	if((stat & NOPOWER) || !occupant || occupant.stat == DEAD)
 		return
-	to_chat(user, "Current clone cycle is [round(GetCloneReadiness())]% complete.")
+	to_chat(user, "Current clone cycle is [round(GetCloneReadiness() * 100)]% complete.")
 
 //Clonepod
 
@@ -108,7 +108,7 @@
 	H.real_name = R.dna.real_name
 
 	//Get the clone body ready
-	H.setCloneLoss(H.maxHealth * (100 - HEALTH_THRESHOLD_CRIT) / 100) // We want to put them exactly at the crit level, so we deal this much clone damage
+	H.setCloneLoss(-H.maxHealth) // We want to put them exactly at the crit level, so we deal this much clone damage
 	H.Paralyse(4)
 
 	//Here let's calculate their health so the pod doesn't immediately eject them!!!
@@ -149,11 +149,9 @@
 /obj/machinery/clonepod/proc/GetCloneReadiness() // Returns a number between 0 and 100
 	if(!occupant)
 		return
-
 	if(occupant.getCloneLoss() == 0) // Rare case, but theoretically possible
-		return 100
-
-	return between(0, 100 * (occupant.health - occupant.maxHealth * HEALTH_THRESHOLD_CRIT / 100) / (occupant.maxHealth * (heal_level - HEALTH_THRESHOLD_CRIT) / 100), 100)
+		return 1
+	return between(0, ( ( occupant.maxHealth - occupant.getCloneLoss()) / occupant.maxHealth ), 100)
 
 //Grow clones to maturity then kick them out.  FREELOADERS
 /obj/machinery/clonepod/Process()
@@ -171,7 +169,7 @@
 			connected_message("Clone Rejected: Deceased.")
 			return
 
-		if(GetCloneReadiness() >= 100 && !eject_wait)
+		if(GetCloneReadiness() >= 1 && !eject_wait)
 			playsound(src.loc, 'sound/machines/ding.ogg', 50, 1)
 			src.audible_message("\The [src] signals that the cloning process is complete.")
 			connected_message("Cloning Process Complete.")
@@ -187,13 +185,10 @@
 		//Premature clones may have brain damage.
 		occupant.adjustBrainLoss(-(ceil(0.5*heal_rate)))
 
-		//So clones don't die of oxyloss in a running pod.
-		if(occupant.reagents.get_reagent_amount("inaprovaline") < 30)
-			occupant.reagents.add_reagent("inaprovaline", 60)
 		occupant.Sleeping(30)
 		//Also heal some oxyloss ourselves because inaprovaline is so bad at preventing it!!
 		occupant.adjustOxyLoss(-4)
-
+		connected_message("Current clone cycle is [round(GetCloneReadiness() * 100)]% complete.")
 		return
 
 	else if((!occupant) || (occupant.loc != src))
