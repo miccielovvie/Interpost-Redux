@@ -306,6 +306,21 @@
 	parry_sounds = list('sound/weapons/blade_parry1.ogg', 'sound/weapons/blade_parry2.ogg', 'sound/weapons/blade_parry3.ogg')
 	drop_sound = 'sound/items/drop_sword.ogg'
 
+/obj/item/weapon/material/sword/faceless
+	name = "faceless sword"
+	desc = "A very fine titanum sword used by advanced mercenaries."
+	icon_state = "faceless_s"
+	item_state = "sabre"
+	force_divisor = 0.6
+	block_chance = 50
+	w_class = ITEM_SIZE_HUGE
+	drawsound = 'sound/items/unholster_sword02.ogg'
+	equipsound = 'sound/items/holster_sword1.ogg'
+	sharpness = 18
+	weapon_speed_delay = 20
+	parry_sounds = list('sound/weapons/blade_parry1.ogg', 'sound/weapons/blade_parry2.ogg', 'sound/weapons/blade_parry3.ogg')
+	drop_sound = 'sound/items/drop_sword.ogg'
+
 /obj/item/weapon/material/sword/oldsabre
 	name = "sabre"
 	desc = "A fine bladed sabre."

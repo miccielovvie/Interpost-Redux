@@ -46,5 +46,5 @@
 	new /obj/item/clothing/gloves/combat/gloves(src)
 	new /obj/item/clothing/shoes/dutyboots(src)
 	new /obj/item/clothing/accessory/storage/black_vest(src)
-	new /obj/item/weapon/material/sword/siegesword(src)
+	new /obj/item/weapon/material/sword/faceless(src)
 	new /obj/item/weapon/shield/modern(src)

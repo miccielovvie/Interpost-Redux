@@ -195,12 +195,12 @@
 	allowed_magazines = /obj/item/ammo_magazine/colt
 	jam_chance = 0
 
-/obj/item/weapon/gun/projectile/maers14/update_icon()
+/obj/item/weapon/gun/projectile/faceless/update_icon()
 	..()
 	if(ammo_magazine && ammo_magazine.stored_ammo.len)
-		icon_state = "maers14"
+		icon_state = "faceless"
 	else
-		icon_state = "maers14_empty"
+		icon_state = "faceless_empty"
 
 /obj/item/weapon/gun/projectile/herculus
 	name = "Herculus BX-24"
