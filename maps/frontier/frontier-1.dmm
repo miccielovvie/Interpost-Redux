@@ -155,7 +155,7 @@
 "cY" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0},/turf/simulated/floor/tiled/ramp{dir = 8; icon_state = "ramptop"},/area/mine/explored)
 "cZ" = (/obj/machinery/hologram/holopad,/turf/simulated/floor/tiled,/area/engineering/foyer)
 "da" = (/obj/effect/floor_decal/newcorner/black/solid,/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/closet/crate,/turf/simulated/floor/tiled,/area/maintenance/sub/port)
-"db" = (/obj/effect/floor_decal/newcorner/black/solid,/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/closet/crate,/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled,/area/maintenance/sub/port)
+"db" = (/obj/effect/floor_decal/newcorner/black/solid,/obj/effect/floor_decal/industrial/outline/yellow,/obj/structure/closet/crate,/obj/machinery/light{dir = 1},/obj/item/weapon/melee/punisher,/turf/simulated/floor/tiled,/area/maintenance/sub/port)
 "dc" = (/obj/structure/cable{d2 = 2; icon_state = "0-2"; pixel_y = 1},/obj/machinery/power/apc{dir = 1; name = "north bump"; pixel_x = 0; pixel_y = 24},/obj/structure/bed/chair,/obj/effect/floor_decal/newcorner/black/quarter{dir = 1; icon_state = "black-quarter"; tag = "icon-black-quarter (NORTH)"},/obj/machinery/firealarm{dir = 8; pixel_x = -24},/turf/simulated/floor/tiled/dark,/area/hallway/secondary/exit)
 "dd" = (/obj/effect/decal/cleanable/dirt,/obj/structure/woodenclock,/obj/random/trash,/turf/simulated/floor/holofloor/wood,/area/maintenance/sub/port)
 "de" = (/turf/space,/area/maintenance/sub/port)

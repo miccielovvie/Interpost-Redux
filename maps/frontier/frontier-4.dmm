@@ -38,7 +38,7 @@
 "aL" = (/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6},/obj/structure/disposalpipe/segment{dir = 8; icon_state = "pipe-c"},/turf/simulated/floor/tiled,/area/crew_quarters/captain)
 "aM" = (/obj/structure/bed/chair/office/dark{dir = 4},/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 10},/turf/simulated/floor/tiled,/area/crew_quarters/captain)
 "aN" = (/obj/effect/floor_decal/turf/cafe2,/obj/structure/table/steel_reinforced,/obj/item/weapon/paper_bin,/obj/item/weapon/pen,/obj/machinery/camera/autoname,/turf/simulated/floor/tiled,/area/bridge)
-"aO" = (/obj/effect/floor_decal/spline/plain{dir = 4},/obj/structure/throne/countess,/turf/simulated/floor/carpet/blue2,/area/bridge)
+"aO" = (/obj/effect/floor_decal/spline/plain{dir = 4},/turf/simulated/floor/carpet/blue2,/area/bridge)
 "aP" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 6; pixel_y = 1},/turf/simulated/floor/wood,/area/bridge/meeting_room)
 "aQ" = (/obj/structure/table/steel_reinforced,/obj/machinery/chemical_dispenser/bar_soft/full,/turf/simulated/floor/tiled,/area/crew_quarters/captain)
 "aR" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/turf/simulated/floor/wood,/area/bridge/meeting_room)
