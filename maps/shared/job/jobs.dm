@@ -3,8 +3,8 @@
 						/datum/job/captain,
 						//datum/job/countess,
 						/datum/job/hop,
-						/datum/job/supreme_arbiter,
-						/datum/job/arbiter,
+						//datum/job/supreme_arbiter,
+						//datum/job/arbiter,
 						///datum/job/medassist
 						/datum/job/hos,
 						/datum/job/officer,
@@ -23,7 +23,7 @@
 						/datum/job/janitor,
 						/datum/job/engineer,
 						/datum/job/chaplain,
-						//datum/job/jester
+						/datum/job/jester
 						/datum/job/bum,
 						///datum/job/cadet
 						///datum/job/ouvrier
