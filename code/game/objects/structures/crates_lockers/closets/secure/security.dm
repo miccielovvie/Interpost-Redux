@@ -81,6 +81,7 @@
 
 /obj/structure/closet/secure_closet/hos/WillContain()
 	return list(
+		/obj/item/device/radio/headset/heads/hos,
 		/obj/item/clothing/head/HoS,
 		/obj/item/clothing/suit/armor/hos,
 		/obj/item/taperoll/police,
