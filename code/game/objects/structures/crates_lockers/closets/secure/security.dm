@@ -71,7 +71,7 @@
 	)
 
 /obj/structure/closet/secure_closet/hos
-	name = "head of security's locker"
+	name = "Marshal's locker"
 	req_access = list(access_hos)
 	icon_state = "hossecure1"
 	icon_closed = "hossecure"
@@ -81,6 +81,7 @@
 
 /obj/structure/closet/secure_closet/hos/WillContain()
 	return list(
+		/obj/item/device/radio/headset/heads/hos,
 		/obj/item/clothing/head/HoS,
 		/obj/item/clothing/suit/armor/hos,
 		/obj/item/taperoll/police,
